@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Danta
 
-## Getting Started
+**Staged PayPal payments and an aftercare guarantee for people who fly to India for dental care.**
 
-First, run the development server:
+9.6 million US adults have travelled abroad for dental treatment ([CareQuest Institute, 2026](https://carequest.org/press-release/new-report-nearly-9-6-million-adults-have-traveled-outside-the-us-to-receive-dental-treatment/)), and 86% of UK dentists who saw these patients had to treat complications ([British Dental Association](https://bda.org/news-and-opinion/news/dental-tourism-patients-need-to-know-the-risks)). For the Indian diaspora the dentistry is rarely the problem. The money is: patients wire it in advance, read quotes with missing items, and have no way back when a crown cracks after they fly home.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Danta turns a clinic's quote into a checked plan paid in stages with PayPal, and gives the patient a written guarantee their dentist back home can claim against.
+
+Built for the [PayPal AI Hackathon 2026](https://paypalaihackathon.devpost.com/). All clinics, patients and quotes are fictional; all payments use the PayPal sandbox.
+
+**Live demo:** _link added after deployment_
+
+## What it does
+
+1. **Reads the quote.** Gemini extracts every line, each linked to the exact text it came from. Code, not the model, then redoes the arithmetic and checks for missing items: a crown with no lab fee, an implant with no abutment, too little healing time between trips, no warranty.
+2. **Pay in stages.** A deposit through PayPal Checkout books trip one. Each later stage gets a PayPal invoice only when it is due. Every PayPal write carries an idempotency key, captures are checked against the plan amount, and a stage can only be marked paid once.
+3. **An agent with limits.** The clinic's assistant proposes invoices, reschedules and refunds. Rules in code check each proposal (healing gap kept, stage not already paid, refund not more than what is left, inside PayPal's 180-day refund window). A person approves, and the [PayPal Agent Toolkit](https://github.com/paypal/agent-toolkit) executes it.
+4. **Aftercare claims.** A home dentist's note is checked by the model against the clinic's written warranty. Code computes the amount, the agent proposes the refund, and the clinic approves it.
+5. **The clinic console** shows both trips on a [Bryntum Scheduler Pro](https://bryntum.com/products/schedulerpro/) timeline. The healing time is a dependency with a lag, so the scheduling engine itself will not put trip two before the implant has healed. Dragging a stage asks the assistant to propose the move rather than changing anything directly.
+6. **Plain language, in the patient's language.** The plan can be explained in Hindi, Kannada, Malayalam, Tamil and other languages.
+
+## Try the demo
+
+1. Open the live demo and click **Open the live demo**. You get your own copy of a fictional patient's case.
+2. Pay the booking deposit with the PayPal sandbox buyer account: _sandbox buyer email added after setup_ (password: ask in the Devpost submission's testing notes).
+3. Open the **Clinic console**, ask the assistant to **invoice the next stage that is due**, and approve it. Then try **Bring trip 2 forward to three weeks after trip 1** and watch the healing-gap rule block it.
+4. Back on the patient page, once a stage is paid, use **Aftercare guarantee → Use a sample note** and see the claim turn into a refund proposal.
+
+## Results
+
+`npm run eval` scores quote reading on [20 fictional quotes](eval/quotes.json) in five layouts (dotted price lists, dash lists, tables, letters in prose, rupee notation), each with an answer key. The set was committed before the model ever ran on it. A regex parser is the baseline.
+
+| | Totals right | All issues exactly right | Issue precision | Issue recall |
+|---|---|---|---|---|
+| Regex baseline | 17/20 | 10/20 | 56% | 88% |
+| Danta | _pending first run_ | | | |
+
+Full table and every mistake: [eval/results.md](eval/results.md). `npm test` runs 24 tests on the quote checks, the payment schedule and every agent limit.
+
+## How it is built
+
+- Next.js 16, React 19, TypeScript, Supabase Postgres ([schema](supabase/migrations))
+- PayPal REST: Orders v2 (capture), Invoicing v2, Payments refunds, verified webhooks
+- PayPal Agent Toolkit (`create_invoice`, `send_invoice`, `cancel_sent_invoice`, `create_refund`)
+- Vercel AI SDK with Gemini, structured output validated with zod
+- Bryntum Scheduler Pro (trial package from npm)
+
+```
+src/lib/plan.ts      what the AI extracts, and the deterministic checks
+src/lib/cases.ts     plan → deposit and stages with healing gaps
+src/lib/payments.ts  orders, captures, invoices, refunds (idempotent)
+src/lib/agent.ts     propose → rule check → human approval → Agent Toolkit
+src/lib/claims.ts    warranty review and refund proposal
+src/components/      patient portal, clinic console, Bryntum timeline
+eval/                test quotes, answer key, results
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Run it yourself
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm install
+cp .env.example .env.local   # fill in your own sandbox and API keys
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+You need a PayPal sandbox app (Merchant), a Supabase project with the migration applied, and a Gemini API key. Set `PAYPAL_WEBHOOK_ID` after adding a webhook for `INVOICING.INVOICE.PAID` and `PAYMENT.CAPTURE.COMPLETED` pointing at `/api/webhooks/paypal`.
 
-## Learn More
+## Limits, honestly
 
-To learn more about Next.js, take a look at the following resources:
+- Danta never gives medical advice. It checks money and schedules, not whether a treatment is right.
+- PayPal refunds work for 180 days after payment, so the guarantee covers that window. A real product would route later claims to the clinic.
+- Pay Later is not offered: it is not available to merchants in India.
+- The quotes in the evaluation are synthetic. Real clinic quotes are messier.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Business model
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Clinics would pay a small fee per completed international case. Patients pay nothing extra beyond PayPal's normal pricing.
 
-## Deploy on Vercel
+## Licence
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT. See [LICENSE](LICENSE).
