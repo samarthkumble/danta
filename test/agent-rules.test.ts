@@ -72,6 +72,12 @@ describe("refund proposals", () => {
     const r = checkProposal(bundle({ stages: [paidStage(40)], claims: [claim({ status: "refunded" })] }), p("refund_warranty_claim", { claimId: "cl1" }));
     expect(failed(r)).toContain("Claim exists and is open");
   });
+  it("refunds the same item only once", () => {
+    const earlier = claim({ id: "cl0", status: "refunded", verdict: { covered: true, appliesToItem: "Zirconia crown" } });
+    const again = claim({ verdict: { covered: true, needsHuman: false, appliesToItem: "Zirconia crown" } });
+    const r = checkProposal(bundle({ stages: [paidStage(40, 13000)], claims: [earlier, again] }), p("refund_warranty_claim", { claimId: "cl1" }));
+    expect(failed(r)).toEqual(["Not already refunded for the same item"]);
+  });
   it("blocks tools the agent does not have", () => {
     expect(checkProposal(bundle(), p("send_money", { to: "x" })).ok).toBe(false);
   });

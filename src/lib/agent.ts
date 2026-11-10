@@ -55,11 +55,16 @@ export function checkProposal(b: CaseBundle, p: Proposal): Check {
       const s = b.stages.find((x) => x.id === claim?.stage_id);
       const left = s ? s.amount_cents - s.refunded_cents : 0;
       const within = !!s?.paid_at && Date.now() - new Date(s.paid_at).getTime() <= 180 * DAY;
+      const item = (claim?.verdict as { appliesToItem?: string | null } | undefined)?.appliesToItem ?? null;
+      const repeat = b.claims.some(
+        (c) => c.id !== p.args.claimId && c.stage_id === claim?.stage_id && c.status === "refunded" && ((c.verdict as { appliesToItem?: string | null } | null)?.appliesToItem ?? null) === item,
+      );
       return check([
         ["Claim exists and is open", !!claim && claim.status === "open"],
         ["Warranty review says covered", !!claim?.verdict?.covered],
         ["Refund is not more than what is left on the stage", !!claim && claim.refund_cents > 0 && claim.refund_cents <= left],
         ["Within PayPal's 180-day refund window", within],
+        ["Not already refunded for the same item", !repeat],
       ]);
     }
     default:
