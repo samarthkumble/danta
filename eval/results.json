@@ -1,5 +1,5 @@
 {
- "promptVersion": "49f7d9949e",
+ "promptVersion": "cd5cb67656",
  "model": "gemini-3.5-flash-lite",
  "results": [
   {
@@ -46,6 +46,54 @@
     "short_gap": {
      "tp": 2,
      "fp": 1,
+     "fn": 0
+    }
+   }
+  },
+  {
+   "name": "Danta (gemini-3.5-flash-lite)",
+   "n": 20,
+   "total": 20,
+   "trips": 18,
+   "items": 20,
+   "currency": 20,
+   "exact": 20,
+   "precision": 1,
+   "recall": 1,
+   "per": {
+    "line_math": {
+     "tp": 2,
+     "fp": 0,
+     "fn": 0
+    },
+    "total_mismatch": {
+     "tp": 2,
+     "fp": 0,
+     "fn": 0
+    },
+    "implant_no_crown": {
+     "tp": 1,
+     "fp": 0,
+     "fn": 0
+    },
+    "no_abutment": {
+     "tp": 2,
+     "fp": 0,
+     "fn": 0
+    },
+    "no_lab_fee": {
+     "tp": 5,
+     "fp": 0,
+     "fn": 0
+    },
+    "no_warranty": {
+     "tp": 3,
+     "fp": 0,
+     "fn": 0
+    },
+    "short_gap": {
+     "tp": 2,
+     "fp": 0,
      "fn": 0
     }
    }
@@ -238,6 +286,197 @@
     ]
    }
   ],
-  "danta": null
+  "danta": [
+   {
+    "totalCents": 102000,
+    "trips": 2,
+    "items": 5,
+    "currency": "USD",
+    "issues": [],
+    "aiFlags": 0
+   },
+   {
+    "totalCents": 36000,
+    "trips": 1,
+    "items": 2,
+    "currency": "USD",
+    "issues": [
+     "no_lab_fee"
+    ],
+    "aiFlags": 2
+   },
+   {
+    "totalCents": 177500,
+    "trips": 2,
+    "items": 5,
+    "currency": "GBP",
+    "issues": [],
+    "aiFlags": 1
+   },
+   {
+    "totalCents": 92000,
+    "trips": 2,
+    "items": 5,
+    "currency": "GBP",
+    "issues": [
+     "short_gap"
+    ],
+    "aiFlags": 1
+   },
+   {
+    "totalCents": 174000,
+    "trips": 1,
+    "items": 2,
+    "currency": "CAD",
+    "issues": [
+     "no_lab_fee"
+    ],
+    "aiFlags": 2
+   },
+   {
+    "totalCents": 108000,
+    "trips": 2,
+    "items": 5,
+    "currency": "CAD",
+    "issues": [
+     "no_warranty"
+    ],
+    "aiFlags": 2
+   },
+   {
+    "totalCents": 112000,
+    "trips": 2,
+    "items": 5,
+    "currency": "USD",
+    "issues": [
+     "total_mismatch"
+    ],
+    "aiFlags": 1
+   },
+   {
+    "totalCents": 22500,
+    "trips": 1,
+    "items": 2,
+    "currency": "USD",
+    "issues": [
+     "line_math"
+    ],
+    "aiFlags": 2
+   },
+   {
+    "totalCents": 209000,
+    "trips": 2,
+    "items": 4,
+    "currency": "AUD",
+    "issues": [],
+    "aiFlags": 1
+   },
+   {
+    "totalCents": 77000,
+    "trips": 1,
+    "items": 2,
+    "currency": "AUD",
+    "issues": [
+     "implant_no_crown",
+     "no_abutment"
+    ],
+    "aiFlags": 1
+   },
+   {
+    "totalCents": 2050000,
+    "trips": 1,
+    "items": 3,
+    "currency": "INR",
+    "issues": [],
+    "aiFlags": 1
+   },
+   {
+    "totalCents": 9600000,
+    "trips": 2,
+    "items": 4,
+    "currency": "INR",
+    "issues": [
+     "no_lab_fee",
+     "no_warranty",
+     "short_gap"
+    ],
+    "aiFlags": 1
+   },
+   {
+    "totalCents": 93000,
+    "trips": 1,
+    "items": 3,
+    "currency": "AED",
+    "issues": [],
+    "aiFlags": 1
+   },
+   {
+    "totalCents": 438000,
+    "trips": 2,
+    "items": 4,
+    "currency": "USD",
+    "issues": [],
+    "aiFlags": 1
+   },
+   {
+    "totalCents": 91000,
+    "trips": 2,
+    "items": 3,
+    "currency": "USD",
+    "issues": [
+     "no_abutment"
+    ],
+    "aiFlags": 1
+   },
+   {
+    "totalCents": 75000,
+    "trips": 1,
+    "items": 2,
+    "currency": "GBP",
+    "issues": [
+     "no_lab_fee",
+     "no_warranty"
+    ],
+    "aiFlags": 1
+   },
+   {
+    "totalCents": 240000,
+    "trips": 1,
+    "items": 2,
+    "currency": "CAD",
+    "issues": [
+     "line_math"
+    ],
+    "aiFlags": 1
+   },
+   {
+    "totalCents": 96000,
+    "trips": 2,
+    "items": 4,
+    "currency": "USD",
+    "issues": [],
+    "aiFlags": 1
+   },
+   {
+    "totalCents": 73000,
+    "trips": 1,
+    "items": 2,
+    "currency": "USD",
+    "issues": [
+     "total_mismatch"
+    ],
+    "aiFlags": 1
+   },
+   {
+    "totalCents": 4500000,
+    "trips": 2,
+    "items": 3,
+    "currency": "INR",
+    "issues": [
+     "no_lab_fee"
+    ],
+    "aiFlags": 1
+   }
+  ]
  }
 }

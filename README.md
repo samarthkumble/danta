@@ -33,7 +33,9 @@ Built for the [PayPal AI Hackathon 2026](https://paypalaihackathon.devpost.com/)
 | | Totals right | All issues exactly right | Issue precision | Issue recall |
 |---|---|---|---|---|
 | Regex baseline | 17/20 | 10/20 | 56% | 88% |
-| Danta | _pending first run_ | | | |
+| Danta (Gemini 3.5 Flash-Lite + rules) | 20/20 | 20/20 | 100% | 100% |
+
+Danta got the number of trips wrong on 2 of 20 quotes (one is arguably a fault in the answer key; both are listed). Three of the first 20 model calls failed with a transient error and succeeded on retry. The quotes are synthetic and written by us, so read this as "the model reads varied layouts correctly", not as real-world accuracy. The model's outputs are committed in `eval/cache.json`, so `npm run eval` reproduces the table without an API key.
 
 Full table and every mistake: [eval/results.md](eval/results.md). `npm test` runs 24 tests on the quote checks, the payment schedule and every agent limit.
 

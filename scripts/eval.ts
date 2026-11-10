@@ -118,7 +118,8 @@ async function main() {
   const base = quotes.map((q) => baseline(q.quote));
   const results = [score("Regex baseline", base)];
   let dantaRuns: Run[] | null = null;
-  if (process.env.GEMINI_API_KEY) {
+  const cached = quotes.every((q) => cache[`${MODEL}:${PROMPT_VERSION}:${q.id}`]);
+  if (process.env.GEMINI_API_KEY || cached) {
     dantaRuns = [];
     for (const q of quotes) {
       try {
@@ -130,7 +131,7 @@ async function main() {
     }
     console.log();
     results.push(score(`Danta (${MODEL})`, dantaRuns));
-  } else console.log("GEMINI_API_KEY not set: running the baseline only.");
+  } else console.log("No cached model outputs for this prompt version and GEMINI_API_KEY is not set: running the baseline only.");
 
   const pct = (a: number, n: number) => `${a}/${n}`;
   const md = [
@@ -138,6 +139,8 @@ async function main() {
     ``,
     `20 fictional quotes in five layouts (dotted lines, dash lists, pipe tables, prose, rupee notation), answer key in \`eval/quotes.json\`.`,
     `Prompt version \`${PROMPT_VERSION}\`, run ${new Date().toISOString().slice(0, 10)}. Issue tags for Danta come only from the rules in code.`,
+    ``,
+    `Caveats: the quotes are synthetic and were written by the same team that wrote the rules, so this measures whether the model reads varied layouts correctly, not real-world accuracy. Model outputs are in \`eval/cache.json\`; rerunning \`npm run eval\` reproduces these numbers without calling the model.`,
     ``,
     `| | Totals right | Trips right | Line items right | Currency right | All issues exactly right | Issue precision | Issue recall |`,
     `|---|---|---|---|---|---|---|---|`,
@@ -151,6 +154,8 @@ async function main() {
     ``,
     `## Mistakes`,
     ``,
+    `Every miss is listed, including ones where the answer key itself is debatable. The key was not changed after seeing results.`,
+    ``,
     ...quotes.flatMap((q, i) => {
       const rows: string[] = [];
       for (const [name, runs] of [["Baseline", base], ["Danta", dantaRuns]] as const) {
@@ -159,6 +164,8 @@ async function main() {
         const errs: string[] = [];
         if (r.error) errs.push(`error: ${r.error.slice(0, 120)}`);
         if (r.totalCents !== q.key.totalCents) errs.push(`total ${r.totalCents} vs ${q.key.totalCents}`);
+        if (r.trips !== q.key.trips) errs.push(`${r.trips} trips vs ${q.key.trips}`);
+        if (r.items !== q.key.items) errs.push(`${r.items} line items vs ${q.key.items}`);
         const miss = q.key.issues.filter((t) => !r.issues.includes(t)), extra = r.issues.filter((t) => !q.key.issues.includes(t));
         if (miss.length) errs.push(`missed ${miss.join(", ")}`);
         if (extra.length) errs.push(`wrongly flagged ${extra.join(", ")}`);

@@ -1,0 +1,1263 @@
+{
+ "gemini-3.5-flash-lite:cd5cb67656:q02": {
+  "clinicName": "Pearl Smiles, Kochi",
+  "currency": "USD",
+  "items": [
+   {
+    "description": "Root canal treatment",
+    "tooth": "16",
+    "quantity": 1,
+    "unitPrice": 120,
+    "lineTotal": 120,
+    "stage": 1,
+    "sourceQuote": "1. Root canal treatment, tooth 16 .......... 1 x 120.00 = 120.00"
+   },
+   {
+    "description": "Zirconia crown",
+    "tooth": "16",
+    "quantity": 1,
+    "unitPrice": 240,
+    "lineTotal": 240,
+    "stage": 1,
+    "sourceQuote": "2. Zirconia crown, tooth 16 ................ 1 x 240.00 = 240.00"
+   }
+  ],
+  "stages": [
+   {
+    "number": 1,
+    "title": "Root canal and crown",
+    "trip": 1,
+    "durationDays": 5,
+    "minGapAfterPreviousDays": 0
+   }
+  ],
+  "statedTotal": 360,
+  "depositPercent": null,
+  "warrantyMonths": 12,
+  "warrantyTerms": "crowns 1 year against fracture; implants 5 years (manufacturer)",
+  "excluded": [],
+  "flags": [
+   {
+    "kind": "unclear",
+    "message": "The quote requires full payment on day 1 before treatment begins.",
+    "sourceQuote": "Full payment on day 1."
+   },
+   {
+    "kind": "missing",
+    "message": "The clinic mentions an implant warranty, but no implants are listed in the quote.",
+    "sourceQuote": "Warranty: crowns 1 year against fracture; implants 5 years (manufacturer)."
+   }
+  ],
+  "summary": "You will receive a root canal treatment and a zirconia crown on tooth 16 over a single visit."
+ },
+ "gemini-3.5-flash-lite:cd5cb67656:q01": {
+  "clinicName": "Sea Breeze Dental",
+  "currency": "USD",
+  "items": [
+   {
+    "description": "Consultation and OPG X-ray",
+    "tooth": null,
+    "quantity": 1,
+    "unitPrice": 40,
+    "lineTotal": 40,
+    "stage": 1,
+    "sourceQuote": "Consultation and OPG X-ray .............. 1 x 40.00 = 40.00"
+   },
+   {
+    "description": "Implant fixture",
+    "tooth": "46",
+    "quantity": 1,
+    "unitPrice": 480,
+    "lineTotal": 480,
+    "stage": 1,
+    "sourceQuote": "Implant fixture, tooth 46 ............... 1 x 480.00 = 480.00"
+   },
+   {
+    "description": "Implant surgery",
+    "tooth": null,
+    "quantity": 1,
+    "unitPrice": 160,
+    "lineTotal": 160,
+    "stage": 1,
+    "sourceQuote": "Implant surgery ......................... 1 x 160.00 = 160.00"
+   },
+   {
+    "description": "Abutment",
+    "tooth": null,
+    "quantity": 1,
+    "unitPrice": 130,
+    "lineTotal": 130,
+    "stage": 2,
+    "sourceQuote": "Abutment ................................ 1 x 130.00 = 130.00"
+   },
+   {
+    "description": "PFM crown including lab",
+    "tooth": null,
+    "quantity": 1,
+    "unitPrice": 210,
+    "lineTotal": 210,
+    "stage": 2,
+    "sourceQuote": "PFM crown incl. lab ..................... 1 x 210.00 = 210.00"
+   }
+  ],
+  "stages": [
+   {
+    "number": 1,
+    "title": "Implant placement",
+    "trip": 1,
+    "durationDays": 6,
+    "minGapAfterPreviousDays": 0
+   },
+   {
+    "number": 2,
+    "title": "Crown placement",
+    "trip": 2,
+    "durationDays": 3,
+    "minGapAfterPreviousDays": 120
+   }
+  ],
+  "statedTotal": 1020,
+  "depositPercent": 25,
+  "warrantyMonths": 12,
+  "warrantyTerms": "crowns 1 year against fracture; implants 5 years (manufacturer)",
+  "excluded": [],
+  "flags": [],
+  "summary": "You will receive an implant fixture on tooth 46 along with consultation and surgery during your first trip of 6 days. After a 4-month healing period, you will return for a second 3-day trip to receive the abutment and PFM crown."
+ },
+ "gemini-3.5-flash-lite:cd5cb67656:q04": {
+  "clinicName": "Coastal Implant Centre",
+  "currency": "GBP",
+  "items": [
+   {
+    "description": "Consultation",
+    "tooth": null,
+    "quantity": 1,
+    "unitPrice": 30,
+    "lineTotal": 30,
+    "stage": 1,
+    "sourceQuote": "Consultation: \u00a330.00"
+   },
+   {
+    "description": "Implant, lower left",
+    "tooth": "lower left",
+    "quantity": 1,
+    "unitPrice": 450,
+    "lineTotal": 450,
+    "stage": 1,
+    "sourceQuote": "Implant, lower left: \u00a3450.00"
+   },
+   {
+    "description": "Surgical fee",
+    "tooth": null,
+    "quantity": 1,
+    "unitPrice": 120,
+    "lineTotal": 120,
+    "stage": 1,
+    "sourceQuote": "Surgical fee: \u00a3120.00"
+   },
+   {
+    "description": "Abutment",
+    "tooth": null,
+    "quantity": 1,
+    "unitPrice": 100,
+    "lineTotal": 100,
+    "stage": 2,
+    "sourceQuote": "Abutment: \u00a3100.00"
+   },
+   {
+    "description": "Crown with lab charges",
+    "tooth": null,
+    "quantity": 1,
+    "unitPrice": 220,
+    "lineTotal": 220,
+    "stage": 2,
+    "sourceQuote": "Crown with lab charges: \u00a3220.00"
+   }
+  ],
+  "stages": [
+   {
+    "number": 1,
+    "title": "Implant placement and consultation",
+    "trip": 1,
+    "durationDays": 3,
+    "minGapAfterPreviousDays": 0
+   },
+   {
+    "number": 2,
+    "title": "Abutment and crown placement",
+    "trip": 2,
+    "durationDays": 3,
+    "minGapAfterPreviousDays": 21
+   }
+  ],
+  "statedTotal": 920,
+  "depositPercent": 30,
+  "warrantyMonths": 60,
+  "warrantyTerms": "crowns 1 year against fracture; implants 5 years (manufacturer)",
+  "excluded": [],
+  "flags": [
+   {
+    "kind": "unclear",
+    "message": "The quote suggests a 3-week healing period for an implant, which is unusually short for osseointegration.",
+    "sourceQuote": "Second visit in 3 weeks."
+   }
+  ],
+  "summary": "You will receive a consultation and an implant on the lower left during your first trip. After a 3-week healing period, you will return for your second visit to have the abutment and final crown placed."
+ },
+ "gemini-3.5-flash-lite:cd5cb67656:q03": {
+  "clinicName": "Malabar Dental Care",
+  "currency": "GBP",
+  "items": [
+   {
+    "description": "CBCT scan",
+    "tooth": null,
+    "quantity": 1,
+    "unitPrice": 45,
+    "lineTotal": 45,
+    "stage": 1,
+    "sourceQuote": "- CBCT scan: \u00a345.00"
+   },
+   {
+    "description": "Implants, upper front",
+    "tooth": null,
+    "quantity": 2,
+    "unitPrice": 420,
+    "lineTotal": 840,
+    "stage": 1,
+    "sourceQuote": "- Implants, upper front (x2): \u00a3840.00"
+   },
+   {
+    "description": "Bone graft",
+    "tooth": null,
+    "quantity": 1,
+    "unitPrice": 150,
+    "lineTotal": 150,
+    "stage": 1,
+    "sourceQuote": "- Bone graft: \u00a3150.00"
+   },
+   {
+    "description": "Abutments",
+    "tooth": null,
+    "quantity": 2,
+    "unitPrice": 110,
+    "lineTotal": 220,
+    "stage": 2,
+    "sourceQuote": "- Abutments (x2): \u00a3220.00"
+   },
+   {
+    "description": "Implant crowns, lab work included",
+    "tooth": null,
+    "quantity": 2,
+    "unitPrice": 260,
+    "lineTotal": 520,
+    "stage": 2,
+    "sourceQuote": "- Implant crowns, lab work included (x2): \u00a3520.00"
+   }
+  ],
+  "stages": [
+   {
+    "number": 1,
+    "title": "Implant placement and bone graft",
+    "trip": 1,
+    "durationDays": 5,
+    "minGapAfterPreviousDays": 0
+   },
+   {
+    "number": 2,
+    "title": "Abutments and crowns",
+    "trip": 2,
+    "durationDays": 5,
+    "minGapAfterPreviousDays": 90
+   }
+  ],
+  "statedTotal": 1775,
+  "depositPercent": 20,
+  "warrantyMonths": 60,
+  "warrantyTerms": "crowns 1 year against fracture; implants 5 years (manufacturer)",
+  "excluded": [],
+  "flags": [
+   {
+    "kind": "unclear",
+    "message": "Please ask the clinic for the exact duration of each trip in days.",
+    "sourceQuote": null
+   }
+  ],
+  "summary": "You will receive upper front dental implants with a bone graft during your first trip, followed by abutments and crowns on your second trip after a 3-month healing period."
+ },
+ "gemini-3.5-flash-lite:cd5cb67656:q06": {
+  "clinicName": "Nethravathi Dental Clinic",
+  "currency": "CAD",
+  "items": [
+   {
+    "description": "Implant fixture",
+    "tooth": null,
+    "quantity": 1,
+    "unitPrice": 500,
+    "lineTotal": 500,
+    "stage": 1,
+    "sourceQuote": "Implant fixture | 1 | 500.00 | 500.00"
+   },
+   {
+    "description": "Placement",
+    "tooth": null,
+    "quantity": 1,
+    "unitPrice": 150,
+    "lineTotal": 150,
+    "stage": 1,
+    "sourceQuote": "Placement | 1 | 150.00 | 150.00"
+   },
+   {
+    "description": "Abutment",
+    "tooth": null,
+    "quantity": 1,
+    "unitPrice": 120,
+    "lineTotal": 120,
+    "stage": 2,
+    "sourceQuote": "Abutment | 1 | 120.00 | 120.00"
+   },
+   {
+    "description": "Lab fee",
+    "tooth": null,
+    "quantity": 1,
+    "unitPrice": 60,
+    "lineTotal": 60,
+    "stage": 2,
+    "sourceQuote": "Lab fee | 1 | 60.00 | 60.00"
+   },
+   {
+    "description": "Zirconia crown",
+    "tooth": null,
+    "quantity": 1,
+    "unitPrice": 250,
+    "lineTotal": 250,
+    "stage": 2,
+    "sourceQuote": "Zirconia crown | 1 | 250.00 | 250.00"
+   }
+  ],
+  "stages": [
+   {
+    "number": 1,
+    "title": "Implant placement",
+    "trip": 1,
+    "durationDays": 0,
+    "minGapAfterPreviousDays": 0
+   },
+   {
+    "number": 2,
+    "title": "Crown placement",
+    "trip": 2,
+    "durationDays": 0,
+    "minGapAfterPreviousDays": 120
+   }
+  ],
+  "statedTotal": 1080,
+  "depositPercent": 20,
+  "warrantyMonths": null,
+  "warrantyTerms": null,
+  "excluded": [],
+  "flags": [
+   {
+    "kind": "missing",
+    "message": "Please ask the clinic for tooth numbers corresponding to the treatment.",
+    "sourceQuote": null
+   },
+   {
+    "kind": "missing",
+    "message": "Please confirm the expected number of clinic days for each trip.",
+    "sourceQuote": null
+   }
+  ],
+  "summary": "You will receive an implant fixture and placement on your first trip, followed by a 4-month healing period. On your second trip, the abutment, lab fee, and zirconia crown will be placed."
+ },
+ "gemini-3.5-flash-lite:cd5cb67656:q05": {
+  "clinicName": "Konkan Dental Studio",
+  "currency": "CAD",
+  "items": [
+   {
+    "description": "Scaling and polishing",
+    "tooth": null,
+    "quantity": 1,
+    "unitPrice": 60,
+    "lineTotal": 60,
+    "stage": 1,
+    "sourceQuote": "Scaling and polishing | 1 | 60.00 | 60.00"
+   },
+   {
+    "description": "Porcelain veneers, upper 6",
+    "tooth": null,
+    "quantity": 6,
+    "unitPrice": 280,
+    "lineTotal": 1680,
+    "stage": 1,
+    "sourceQuote": "Porcelain veneers, upper 6 | 6 | 280.00 | 1,680.00"
+   }
+  ],
+  "stages": [
+   {
+    "number": 1,
+    "title": "Veneers and cleaning",
+    "trip": 1,
+    "durationDays": 5,
+    "minGapAfterPreviousDays": 0
+   }
+  ],
+  "statedTotal": 1740,
+  "depositPercent": 50,
+  "warrantyMonths": 12,
+  "warrantyTerms": "crowns 1 year against fracture; implants 5 years (manufacturer)",
+  "excluded": [],
+  "flags": [
+   {
+    "kind": "unclear",
+    "message": "The quote mentions a warranty for implants, but no implants are listed in the line items. Please confirm if implants are part of your treatment plan.",
+    "sourceQuote": "Warranty: crowns 1 year against fracture; implants 5 years (manufacturer)"
+   },
+   {
+    "kind": "unclear",
+    "message": "The duration of the trip is not stated on the quote. Please ask the clinic how many days you need to stay in Goa for stage 1.",
+    "sourceQuote": null
+   }
+  ],
+  "summary": "You will receive a scaling and polishing along with six porcelain veneers on your upper teeth during a single trip to the clinic."
+ },
+ "gemini-3.5-flash-lite:cd5cb67656:q07": {
+  "clinicName": "Smile Arc Dental",
+  "currency": "USD",
+  "items": [
+   {
+    "description": "Extraction",
+    "tooth": "36",
+    "quantity": 1,
+    "unitPrice": 50,
+    "lineTotal": 50,
+    "stage": 1,
+    "sourceQuote": "Extraction, tooth 36 .................... 1 x 50.00 = 50.00"
+   },
+   {
+    "description": "Implant fixture",
+    "tooth": null,
+    "quantity": 1,
+    "unitPrice": 520,
+    "lineTotal": 520,
+    "stage": 1,
+    "sourceQuote": "Implant fixture ......................... 1 x 520.00 = 520.00"
+   },
+   {
+    "description": "Surgical placement",
+    "tooth": null,
+    "quantity": 1,
+    "unitPrice": 150,
+    "lineTotal": 150,
+    "stage": 1,
+    "sourceQuote": "Surgical placement ...................... 1 x 150.00 = 150.00"
+   },
+   {
+    "description": "Abutment",
+    "tooth": null,
+    "quantity": 1,
+    "unitPrice": 140,
+    "lineTotal": 140,
+    "stage": 2,
+    "sourceQuote": "Abutment ................................ 1 x 140.00 = 140.00"
+   },
+   {
+    "description": "Zirconia crown + lab",
+    "tooth": null,
+    "quantity": 1,
+    "unitPrice": 260,
+    "lineTotal": 260,
+    "stage": 2,
+    "sourceQuote": "Zirconia crown + lab .................... 1 x 260.00 = 260.00"
+   }
+  ],
+  "stages": [
+   {
+    "number": 1,
+    "title": "Extraction and implant placement",
+    "trip": 1,
+    "durationDays": 7,
+    "minGapAfterPreviousDays": 0
+   },
+   {
+    "number": 2,
+    "title": "Abutment and crown",
+    "trip": 2,
+    "durationDays": 7,
+    "minGapAfterPreviousDays": 120
+   }
+  ],
+  "statedTotal": 1180,
+  "depositPercent": 20,
+  "warrantyMonths": 12,
+  "warrantyTerms": "crowns 1 year against fracture; implants 5 years (manufacturer)",
+  "excluded": [],
+  "flags": [
+   {
+    "kind": "unclear",
+    "message": "Please confirm the exact clinic duration required for each trip.",
+    "sourceQuote": null
+   }
+  ],
+  "summary": "You will undergo an extraction and implant placement during your first trip, followed by a 4-month healing period. During your second trip, the abutment and zirconia crown will be placed."
+ },
+ "gemini-3.5-flash-lite:cd5cb67656:q08": {
+  "clinicName": "Royal Dental, Mysuru",
+  "currency": "USD",
+  "items": [
+   {
+    "description": "Composite fillings",
+    "tooth": null,
+    "quantity": 3,
+    "unitPrice": 35,
+    "lineTotal": 115,
+    "stage": 1,
+    "sourceQuote": "Composite fillings ...................... 3 x 35.00 = 115.00"
+   },
+   {
+    "description": "Root canal",
+    "tooth": "26",
+    "quantity": 1,
+    "unitPrice": 110,
+    "lineTotal": 110,
+    "stage": 1,
+    "sourceQuote": "Root canal, tooth 26 .................... 1 x 110.00 = 110.00"
+   }
+  ],
+  "stages": [
+   {
+    "number": 1,
+    "title": "Initial Treatment",
+    "trip": 1,
+    "durationDays": 5,
+    "minGapAfterPreviousDays": 0
+   }
+  ],
+  "statedTotal": 225,
+  "depositPercent": null,
+  "warrantyMonths": 12,
+  "warrantyTerms": "crowns 1 year against fracture; implants 5 years (manufacturer)",
+  "excluded": [],
+  "flags": [
+   {
+    "kind": "inconsistent",
+    "message": "The line items for composite fillings (3 x 35.00) total 105.00, but the line total is stated as 115.00.",
+    "sourceQuote": "Composite fillings ...................... 3 x 35.00 = 115.00"
+   },
+   {
+    "kind": "inconsistent",
+    "message": "The sum of the line items (115.00 + 110.00) equals 225.00, which matches the total, despite the mathematical discrepancy in the first line.",
+    "sourceQuote": "TOTAL: $225.00"
+   }
+  ],
+  "summary": "You will receive composite fillings and a root canal treatment on tooth 26 during a single visit to the clinic."
+ },
+ "gemini-3.5-flash-lite:cd5cb67656:q09": {
+  "clinicName": "Kerala Smile Centre, Thrissur",
+  "currency": "AUD",
+  "items": [
+   {
+    "description": "Implants in the lower jaw",
+    "tooth": null,
+    "quantity": 2,
+    "unitPrice": 600,
+    "lineTotal": 1200,
+    "stage": 1,
+    "sourceQuote": "We will do two implants in the lower jaw at AUD 1,200.00 (2 units)."
+   },
+   {
+    "description": "CBCT scan",
+    "tooth": null,
+    "quantity": 1,
+    "unitPrice": 50,
+    "lineTotal": 50,
+    "stage": 1,
+    "sourceQuote": "Then cbct scan at AUD 50.00."
+   },
+   {
+    "description": "Abutments",
+    "tooth": null,
+    "quantity": 2,
+    "unitPrice": 120,
+    "lineTotal": 240,
+    "stage": 2,
+    "sourceQuote": "We will do abutments at AUD 240.00 (2 units)."
+   },
+   {
+    "description": "Implant crowns, lab work included",
+    "tooth": null,
+    "quantity": 2,
+    "unitPrice": 300,
+    "lineTotal": 600,
+    "stage": 2,
+    "sourceQuote": "Then implant crowns, lab work included at AUD 600.00 (2 units)."
+   }
+  ],
+  "stages": [
+   {
+    "number": 1,
+    "title": "Implant placement and scan",
+    "trip": 1,
+    "durationDays": 3,
+    "minGapAfterPreviousDays": 0
+   },
+   {
+    "number": 2,
+    "title": "Abutments and crowns",
+    "trip": 2,
+    "durationDays": 5,
+    "minGapAfterPreviousDays": 120
+   }
+  ],
+  "statedTotal": 2090,
+  "depositPercent": 20,
+  "warrantyMonths": 12,
+  "warrantyTerms": "crowns 1 year against fracture; implants 5 years (manufacturer)",
+  "excluded": [],
+  "flags": [
+   {
+    "kind": "unclear",
+    "message": "Please confirm the exact number of days you need to stay at the clinic for each trip.",
+    "sourceQuote": null
+   }
+  ],
+  "summary": "You will receive two dental implants in your lower jaw during your first trip, followed by a four-month healing period. On your second trip, abutments and implant crowns will be placed."
+ },
+ "gemini-3.5-flash-lite:cd5cb67656:q12": {
+  "clinicName": "Shree Dental Care",
+  "currency": "INR",
+  "items": [
+   {
+    "description": "Implant (Osstem)",
+    "tooth": null,
+    "quantity": 2,
+    "unitPrice": 28000,
+    "lineTotal": 56000,
+    "stage": 1,
+    "sourceQuote": "Implant (Osstem) - 2 no. @ Rs. 28,000/- = Rs. 56,000/-"
+   },
+   {
+    "description": "Bone graft",
+    "tooth": null,
+    "quantity": 1,
+    "unitPrice": 9000,
+    "lineTotal": 9000,
+    "stage": 1,
+    "sourceQuote": "Bone graft - 1 no. @ Rs. 9,000/- = Rs. 9,000/-"
+   },
+   {
+    "description": "Abutment",
+    "tooth": null,
+    "quantity": 2,
+    "unitPrice": 6000,
+    "lineTotal": 12000,
+    "stage": 2,
+    "sourceQuote": "Abutment - 2 no. @ Rs. 6,000/- = Rs. 12,000/-"
+   },
+   {
+    "description": "Ceramic crown",
+    "tooth": null,
+    "quantity": 2,
+    "unitPrice": 9500,
+    "lineTotal": 19000,
+    "stage": 2,
+    "sourceQuote": "Ceramic crown - 2 no. @ Rs. 9,500/- = Rs. 19,000/-"
+   }
+  ],
+  "stages": [
+   {
+    "number": 1,
+    "title": "Implant placement and bone graft",
+    "trip": 1,
+    "durationDays": 3,
+    "minGapAfterPreviousDays": 0
+   },
+   {
+    "number": 2,
+    "title": "Abutments and ceramic crowns",
+    "trip": 2,
+    "durationDays": 5,
+    "minGapAfterPreviousDays": 30
+   }
+  ],
+  "statedTotal": 96000,
+  "depositPercent": 25,
+  "warrantyMonths": null,
+  "warrantyTerms": null,
+  "excluded": [],
+  "flags": [
+   {
+    "kind": "missing",
+    "message": "The quote does not specify the exact warranty terms for the implants and crowns.",
+    "sourceQuote": null
+   }
+  ],
+  "summary": "You will receive two dental implants along with a bone graft during your first trip. After a healing period of one month, you will return for a second trip to have the abutments and ceramic crowns placed."
+ },
+ "gemini-3.5-flash-lite:cd5cb67656:q11": {
+  "clinicName": "SRI DURGA DENTAL HOSPITAL",
+  "currency": "INR",
+  "items": [
+   {
+    "description": "Root canal treatment",
+    "tooth": "37",
+    "quantity": 1,
+    "unitPrice": 6000,
+    "lineTotal": 6000,
+    "stage": 1,
+    "sourceQuote": "RCT tooth 37 - 1 no. @ Rs. 6,000/- = Rs. 6,000/-"
+   },
+   {
+    "description": "Post and core",
+    "tooth": "37",
+    "quantity": 1,
+    "unitPrice": 2500,
+    "lineTotal": 2500,
+    "stage": 1,
+    "sourceQuote": "Post and core - 1 no. @ Rs. 2,500/- = Rs. 2,500/-"
+   },
+   {
+    "description": "Zirconia crown including lab",
+    "tooth": "37",
+    "quantity": 1,
+    "unitPrice": 12000,
+    "lineTotal": 12000,
+    "stage": 2,
+    "sourceQuote": "Zirconia crown incl. lab - 1 no. @ Rs. 12,000/- = Rs. 12,000/-"
+   }
+  ],
+  "stages": [
+   {
+    "number": 1,
+    "title": "Root canal treatment and post",
+    "trip": 1,
+    "durationDays": 3,
+    "minGapAfterPreviousDays": 0
+   },
+   {
+    "number": 2,
+    "title": "Crown placement",
+    "trip": 1,
+    "durationDays": 3,
+    "minGapAfterPreviousDays": 0
+   }
+  ],
+  "statedTotal": 20500,
+  "depositPercent": null,
+  "warrantyMonths": 12,
+  "warrantyTerms": "crowns 1 year against fracture; implants 5 years (manufacturer)",
+  "excluded": [],
+  "flags": [
+   {
+    "kind": "unclear",
+    "message": "The quote mentions two sittings but does not specify the exact duration of each visit or the healing gap required between them.",
+    "sourceQuote": null
+   }
+  ],
+  "summary": "You will receive a root canal treatment and post and core on tooth 37, followed by a zirconia crown. This is planned across sittings during your visit to the clinic."
+ },
+ "gemini-3.5-flash-lite:cd5cb67656:q10": {
+  "clinicName": "Blue Lotus Dental, Chennai",
+  "currency": "AUD",
+  "items": [
+   {
+    "description": "Dental implant",
+    "tooth": null,
+    "quantity": 1,
+    "unitPrice": 650,
+    "lineTotal": 650,
+    "stage": 1,
+    "sourceQuote": "implant for the missing molar at AUD 650.00"
+   },
+   {
+    "description": "Surgery and medicines",
+    "tooth": null,
+    "quantity": 1,
+    "unitPrice": 120,
+    "lineTotal": 120,
+    "stage": 1,
+    "sourceQuote": "surgery and medicines at AUD 120.00"
+   }
+  ],
+  "stages": [
+   {
+    "number": 1,
+    "title": "Implant placement and surgery",
+    "trip": 1,
+    "durationDays": 5,
+    "minGapAfterPreviousDays": 0
+   }
+  ],
+  "statedTotal": 770,
+  "depositPercent": null,
+  "warrantyMonths": 12,
+  "warrantyTerms": "crowns 1 year against fracture; implants 5 years (manufacturer)",
+  "excluded": [],
+  "flags": [
+   {
+    "kind": "missing",
+    "message": "The quote mentions you can come back for the rest later, but does not list the price or procedure for the final crown.",
+    "sourceQuote": "You can come back for the rest later."
+   }
+  ],
+  "summary": "You will receive an implant and surgery during your first visit to Chennai. A second visit will be required later for the remaining treatment."
+ },
+ "gemini-3.5-flash-lite:cd5cb67656:q15": {
+  "clinicName": "Green Valley Dental",
+  "currency": "USD",
+  "items": [
+   {
+    "description": "Implant fixture",
+    "tooth": null,
+    "quantity": 1,
+    "unitPrice": 500,
+    "lineTotal": 500,
+    "stage": 1,
+    "sourceQuote": "1. Implant fixture ......................... 1 x 500.00 = 500.00"
+   },
+   {
+    "description": "Placement",
+    "tooth": null,
+    "quantity": 1,
+    "unitPrice": 150,
+    "lineTotal": 150,
+    "stage": 1,
+    "sourceQuote": "2. Placement ............................... 1 x 150.00 = 150.00"
+   },
+   {
+    "description": "Zirconia crown with lab fee",
+    "tooth": null,
+    "quantity": 1,
+    "unitPrice": 260,
+    "lineTotal": 260,
+    "stage": 2,
+    "sourceQuote": "1. Zirconia crown with lab fee ............. 1 x 260.00 = 260.00"
+   }
+  ],
+  "stages": [
+   {
+    "number": 1,
+    "title": "Implant placement",
+    "trip": 1,
+    "durationDays": 3,
+    "minGapAfterPreviousDays": 0
+   },
+   {
+    "number": 2,
+    "title": "Crown placement",
+    "trip": 2,
+    "durationDays": 5,
+    "minGapAfterPreviousDays": 120
+   }
+  ],
+  "statedTotal": 910,
+  "depositPercent": 20,
+  "warrantyMonths": 60,
+  "warrantyTerms": "crowns 1 year against fracture; implants 5 years (manufacturer)",
+  "excluded": [],
+  "flags": [
+   {
+    "kind": "unclear",
+    "message": "The quote states a total of $910.00, but the itemized lines sum up to $910.00.",
+    "sourceQuote": "TOTAL: $910.00"
+   }
+  ],
+  "summary": "This treatment involves a dental implant placement during the first trip, followed by a 4-month healing period. The final zirconia crown is placed on a second trip."
+ },
+ "gemini-3.5-flash-lite:cd5cb67656:q13": {
+  "clinicName": "Udupi Smile Studio",
+  "currency": "AED",
+  "items": [
+   {
+    "description": "Full mouth X-ray",
+    "tooth": null,
+    "quantity": 1,
+    "unitPrice": 80,
+    "lineTotal": 80,
+    "stage": 1,
+    "sourceQuote": "Full mouth X-ray: AED 80.00"
+   },
+   {
+    "description": "Deep cleaning",
+    "tooth": null,
+    "quantity": 1,
+    "unitPrice": 250,
+    "lineTotal": 250,
+    "stage": 1,
+    "sourceQuote": "Deep cleaning: AED 250.00"
+   },
+   {
+    "description": "Composite fillings",
+    "tooth": null,
+    "quantity": 4,
+    "unitPrice": 150,
+    "lineTotal": 600,
+    "stage": 1,
+    "sourceQuote": "Composite fillings (x4): AED 600.00"
+   }
+  ],
+  "stages": [
+   {
+    "number": 1,
+    "title": "Initial diagnostics, cleaning and fillings",
+    "trip": 1,
+    "durationDays": 3,
+    "minGapAfterPreviousDays": 0
+   }
+  ],
+  "statedTotal": 930,
+  "depositPercent": null,
+  "warrantyMonths": 12,
+  "warrantyTerms": "Fillings guaranteed 1 year.",
+  "excluded": [],
+  "flags": [
+   {
+    "kind": "unclear",
+    "message": "Please confirm the exact duration of the clinic visit required for Trip 1.",
+    "sourceQuote": null
+   }
+  ],
+  "summary": "This treatment includes diagnostic imaging, deep cleaning, and four composite fillings completed over a single trip."
+ },
+ "gemini-3.5-flash-lite:cd5cb67656:q14": {
+  "clinicName": "Arabian Sea Dental, Karwar",
+  "currency": "USD",
+  "items": [
+   {
+    "description": "All-on-4 implants, lower arch",
+    "tooth": null,
+    "quantity": 4,
+    "unitPrice": 450,
+    "lineTotal": 1800,
+    "stage": 1,
+    "sourceQuote": "All-on-4 implants, lower arch | 4 | 450.00 | 1,800.00"
+   },
+   {
+    "description": "Temporary denture",
+    "tooth": null,
+    "quantity": 1,
+    "unitPrice": 300,
+    "lineTotal": 300,
+    "stage": 1,
+    "sourceQuote": "Temporary denture | 1 | 300.00 | 300.00"
+   },
+   {
+    "description": "Multi-unit abutments",
+    "tooth": null,
+    "quantity": 4,
+    "unitPrice": 120,
+    "lineTotal": 480,
+    "stage": 2,
+    "sourceQuote": "Multi-unit abutments | 4 | 120.00 | 480.00"
+   },
+   {
+    "description": "Final fixed prosthesis (lab included)",
+    "tooth": null,
+    "quantity": 1,
+    "unitPrice": 1800,
+    "lineTotal": 1800,
+    "stage": 2,
+    "sourceQuote": "Final fixed prosthesis (lab included) | 1 | 1,800.00 | 1,800.00"
+   }
+  ],
+  "stages": [
+   {
+    "number": 1,
+    "title": "Implant placement and temporary denture",
+    "trip": 1,
+    "durationDays": 5,
+    "minGapAfterPreviousDays": 0
+   },
+   {
+    "number": 2,
+    "title": "Abutments and final fixed prosthesis",
+    "trip": 2,
+    "durationDays": 7,
+    "minGapAfterPreviousDays": 150
+   }
+  ],
+  "statedTotal": 4380,
+  "depositPercent": 15,
+  "warrantyMonths": 12,
+  "warrantyTerms": "crowns 1 year against fracture; implants 5 years (manufacturer)",
+  "excluded": [],
+  "flags": [
+   {
+    "kind": "unclear",
+    "message": "Please ask the clinic for the exact duration of stay required for each trip.",
+    "sourceQuote": null
+   }
+  ],
+  "summary": "This treatment plan involves placing lower All-on-4 implants and a temporary denture during the first trip, followed by a 5-month healing period. The second trip will involve placing multi-unit abutments and the final fixed prosthesis."
+ },
+ "gemini-3.5-flash-lite:cd5cb67656:q19": {
+  "clinicName": "Karavali Dental Hub",
+  "currency": "USD",
+  "items": [
+   {
+    "description": "Complete dentures, upper and lower",
+    "tooth": null,
+    "quantity": 1,
+    "unitPrice": 650,
+    "lineTotal": 650,
+    "stage": 1,
+    "sourceQuote": "Complete dentures, upper and lower ...... 1 x 650.00 = 650.00"
+   },
+   {
+    "description": "Relining",
+    "tooth": null,
+    "quantity": 1,
+    "unitPrice": 80,
+    "lineTotal": 80,
+    "stage": 1,
+    "sourceQuote": "Relining ................................ 1 x 80.00 = 80.00"
+   }
+  ],
+  "stages": [
+   {
+    "number": 1,
+    "title": "Complete Dentures and Relining",
+    "trip": 1,
+    "durationDays": 7,
+    "minGapAfterPreviousDays": 0
+   }
+  ],
+  "statedTotal": 780,
+  "depositPercent": 100,
+  "warrantyMonths": 6,
+  "warrantyTerms": "Dentures adjusted free for 6 months.",
+  "excluded": [],
+  "flags": [
+   {
+    "kind": "unclear",
+    "message": "The stated total on the quote is 780.00 USD, but the itemized sum of 650.00 and 80.00 is 730.00 USD. Please ask the clinic to clarify the discrepancy.",
+    "sourceQuote": "TOTAL: $780.00"
+   }
+  ],
+  "summary": "You will receive complete upper and lower dentures along with relining over the course of a single trip."
+ },
+ "gemini-3.5-flash-lite:cd5cb67656:q18": {
+  "clinicName": "Moodbidri Family Dentistry",
+  "currency": "USD",
+  "items": [
+   {
+    "description": "Extraction of wisdom teeth",
+    "tooth": null,
+    "quantity": 2,
+    "unitPrice": 70,
+    "lineTotal": 140,
+    "stage": 1,
+    "sourceQuote": "extraction of two wisdom teeth at $140.00 (2 units)"
+   },
+   {
+    "description": "Implant on the lower right",
+    "tooth": null,
+    "quantity": 1,
+    "unitPrice": 480,
+    "lineTotal": 480,
+    "stage": 1,
+    "sourceQuote": "implant on the lower right at $480.00"
+   },
+   {
+    "description": "Abutment",
+    "tooth": null,
+    "quantity": 1,
+    "unitPrice": 110,
+    "lineTotal": 110,
+    "stage": 2,
+    "sourceQuote": "abutment at $110.00"
+   },
+   {
+    "description": "Crown, lab charges included",
+    "tooth": null,
+    "quantity": 1,
+    "unitPrice": 230,
+    "lineTotal": 230,
+    "stage": 2,
+    "sourceQuote": "crown, lab charges included at $230.00"
+   }
+  ],
+  "stages": [
+   {
+    "number": 1,
+    "title": "Extractions and implant placement",
+    "trip": 1,
+    "durationDays": 3,
+    "minGapAfterPreviousDays": 0
+   },
+   {
+    "number": 2,
+    "title": "Abutment and crown",
+    "trip": 2,
+    "durationDays": 5,
+    "minGapAfterPreviousDays": 90
+   }
+  ],
+  "statedTotal": 960,
+  "depositPercent": 20,
+  "warrantyMonths": 12,
+  "warrantyTerms": "crowns 1 year against fracture; implants 5 years (manufacturer)",
+  "excluded": [],
+  "flags": [
+   {
+    "kind": "unclear",
+    "message": "The line item total for the two wisdom teeth extractions ($140.00) implies a unit price of $70.00, but the clinic should be asked to confirm itemized breakdowns for clarity.",
+    "sourceQuote": "extraction of two wisdom teeth at $140.00 (2 units)"
+   }
+  ],
+  "summary": "This treatment plan involves tooth extractions and a dental implant placed during the first trip, followed by an abutment and crown placement during a second trip after a three-month healing period."
+ },
+ "gemini-3.5-flash-lite:cd5cb67656:q16": {
+  "clinicName": "Tulu Nadu Dental Arts, Mangaluru",
+  "currency": "GBP",
+  "items": [
+   {
+    "description": "Teeth whitening",
+    "tooth": null,
+    "quantity": 1,
+    "unitPrice": 180,
+    "lineTotal": 180,
+    "stage": 1,
+    "sourceQuote": "Teeth whitening: \u00a3180.00"
+   },
+   {
+    "description": "Bridge, 3 units",
+    "tooth": null,
+    "quantity": 3,
+    "unitPrice": 190,
+    "lineTotal": 570,
+    "stage": 1,
+    "sourceQuote": "Bridge, 3 units (x3): \u00a3570.00"
+   }
+  ],
+  "stages": [
+   {
+    "number": 1,
+    "title": "Whitening and bridge",
+    "trip": 1,
+    "durationDays": 5,
+    "minGapAfterPreviousDays": 0
+   }
+  ],
+  "statedTotal": 750,
+  "depositPercent": null,
+  "warrantyMonths": null,
+  "warrantyTerms": null,
+  "excluded": [],
+  "flags": [
+   {
+    "kind": "unclear",
+    "message": "Please confirm if temporary crowns or any additional preparatory treatments are included in the bridge cost.",
+    "sourceQuote": "Bridge, 3 units (x3): \u00a3570.00"
+   }
+  ],
+  "summary": "You will receive teeth whitening and a 3-unit bridge completed over a single visit to the clinic."
+ },
+ "gemini-3.5-flash-lite:cd5cb67656:q20": {
+  "clinicName": "Mahalasa Dental Clinic",
+  "currency": "INR",
+  "items": [
+   {
+    "description": "Implant",
+    "tooth": null,
+    "quantity": 1,
+    "unitPrice": 30000,
+    "lineTotal": 30000,
+    "stage": 1,
+    "sourceQuote": "Implant - 1 no. @ Rs. 30,000/- = Rs. 30,000/-"
+   },
+   {
+    "description": "Abutment",
+    "tooth": null,
+    "quantity": 1,
+    "unitPrice": 7000,
+    "lineTotal": 7000,
+    "stage": 1,
+    "sourceQuote": "Abutment - 1 no. @ Rs. 7,000/- = Rs. 7,000/-"
+   },
+   {
+    "description": "PFM crown",
+    "tooth": null,
+    "quantity": 1,
+    "unitPrice": 8000,
+    "lineTotal": 8000,
+    "stage": 2,
+    "sourceQuote": "PFM crown - 1 no. @ Rs. 8,000/- = Rs. 8,000/-"
+   }
+  ],
+  "stages": [
+   {
+    "number": 1,
+    "title": "Implant placement",
+    "trip": 1,
+    "durationDays": 3,
+    "minGapAfterPreviousDays": 0
+   },
+   {
+    "number": 2,
+    "title": "Crown placement",
+    "trip": 2,
+    "durationDays": 3,
+    "minGapAfterPreviousDays": 90
+   }
+  ],
+  "statedTotal": 45000,
+  "depositPercent": null,
+  "warrantyMonths": 60,
+  "warrantyTerms": "crowns 1 year against fracture; implants 5 years (manufacturer).",
+  "excluded": [],
+  "flags": [
+   {
+    "kind": "unclear",
+    "message": "The quote groups all items into a single sitting, but standard dental practice requires a healing period between implant placement and crown fitting.",
+    "sourceQuote": "Sitting 1: Implant, Abutment, PFM crown"
+   }
+  ],
+  "summary": "This treatment involves placing a dental implant and attaching a crown over two separate trips to allow for proper osseointegration and healing."
+ },
+ "gemini-3.5-flash-lite:cd5cb67656:q17": {
+  "clinicName": "Western Ghats Dental",
+  "currency": "CAD",
+  "items": [
+   {
+    "description": "Clear aligners, full course",
+    "tooth": null,
+    "quantity": 1,
+    "unitPrice": 2200,
+    "lineTotal": 2200,
+    "stage": 1,
+    "sourceQuote": "Clear aligners, full course | 1 | 2,200.00 | 2,200.00"
+   },
+   {
+    "description": "Retainers",
+    "tooth": null,
+    "quantity": 2,
+    "unitPrice": 90,
+    "lineTotal": 200,
+    "stage": 1,
+    "sourceQuote": "Retainers | 2 | 90.00 | 200.00"
+   }
+  ],
+  "stages": [
+   {
+    "number": 1,
+    "title": "Clear Aligners",
+    "trip": 1,
+    "durationDays": 7,
+    "minGapAfterPreviousDays": 0
+   }
+  ],
+  "statedTotal": 2400,
+  "depositPercent": 40,
+  "warrantyMonths": 12,
+  "warrantyTerms": "Aligner refinements free for 12 months.",
+  "excluded": [],
+  "flags": [
+   {
+    "kind": "inconsistent",
+    "message": "The line total for the retainers is listed as 200.00 CAD despite a quantity of 2 at 90.00 CAD each, which mathematically equals 180.00 CAD.",
+    "sourceQuote": "Retainers | 2 | 90.00 | 200.00"
+   }
+  ],
+  "summary": "You will receive a full course of clear aligners and retainers completed over a single trip."
+ }
+}
