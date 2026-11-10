@@ -22,9 +22,12 @@ Built for the [PayPal AI Hackathon 2026](https://paypalaihackathon.devpost.com/)
 ## Try the demo
 
 1. Open the live demo and click **Open the live demo**. You get your own copy of a fictional patient's case.
-2. Pay the booking deposit with the PayPal sandbox buyer account: _sandbox buyer email added after setup_ (password: ask in the Devpost submission's testing notes).
-3. Open the **Clinic console**, ask the assistant to **invoice the next stage that is due**, and approve it. Then try **Bring trip 2 forward to three weeks after trip 1** and watch the healing-gap rule block it.
-4. Back on the patient page, once a stage is paid, use **Aftercare guarantee → Use a sample note** and see the claim turn into a refund proposal.
+2. Pay the booking deposit with the PayPal sandbox buyer account `sb-88lch53835771@personal.example.com`. The password is in the Devpost submission's testing instructions. It is sandbox money only.
+3. Open the **Clinic console**. Try **Bring trip 2 forward to three weeks after trip 1** and watch the healing-gap rule block it. Then ask it to **invoice the next stage that is due** and approve; PayPal sends a real sandbox invoice.
+4. Pay that invoice from the patient page (**Pay the PayPal invoice**). PayPal's webhook marks it paid. Repeat for trip 2.
+5. Use **Aftercare guarantee → Use a sample note**. The claim is checked against the clinic's warranty, the refund is proposed, and approving it in the clinic console sends the money back through PayPal.
+
+Everything above was tested end to end on the live site on 10 November 2026: deposit, two invoices (one cancelled and reissued after a reschedule), webhook confirmation, a covered claim refunded at 50% of the crown fee, and a sports-injury claim declined.
 
 ## Results
 
