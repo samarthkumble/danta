@@ -198,7 +198,7 @@ async function issueInvoice(b: CaseBundle, s: Stage, actionId: string) {
     items: [{ name: s.title.slice(0, 200), description: `Trip ${s.trip}, ${s.starts_on} to ${s.ends_on}`, quantity: "1", unit_amount: { currency_code: s.currency, value: (s.amount_cents / 100).toFixed(2) } }],
   });
   const invoiceId = findInvoiceId(created);
-  if (!invoiceId) throw new Error("PayPal did not return an invoice id");
+  if (!invoiceId) throw new Error(`PayPal did not return an invoice id: ${JSON.stringify(created).slice(0, 600)}`);
   await runTool(requestId("send", s.id, actionId), "send_invoice", { invoice_id: invoiceId, send_to_recipient: true });
   const inv = await getInvoice(invoiceId);
   const url = inv.detail?.metadata?.recipient_view_url ?? null;
