@@ -199,3 +199,7 @@ footer.foot { padding: 30px 0 50px; color: var(--ink-3); font-size: 0.85rem; }
   .sandbox-flag { white-space: nowrap; }
   .pass-stub .stamp { width: 62px; height: 62px; }
 }
+
+/* Grid children may shrink below their content's width; long PayPal ids and URLs wrap instead of widening the page. */
+.grid-2 > *, .grid-3 > *, .stack > * { min-width: 0; }
+.proposal, .log, .items td, .note, .agent-reply { overflow-wrap: anywhere; }
