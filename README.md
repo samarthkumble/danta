@@ -8,7 +8,7 @@ Danta turns a clinic's quote into a checked plan paid in stages with PayPal, and
 
 Built for the [PayPal AI Hackathon 2026](https://paypalaihackathon.devpost.com/). All clinics, patients and quotes are fictional; all payments use the PayPal sandbox.
 
-**Live demo:** _link added after deployment_
+**Live demo:** https://danta-inky.vercel.app
 
 ## What it does
 
