@@ -178,7 +178,12 @@ function toolkit(key: string) {
 async function runTool(key: string, name: string, args: Record<string, unknown>) {
   const t = toolkit(key)[name] as unknown as { execute: (a: unknown, o: unknown) => Promise<unknown> };
   if (!t) throw new Error(`PayPal Agent Toolkit has no tool ${name}`);
-  return t.execute(args, { toolCallId: key, messages: [] });
+  const out = await t.execute(args, { toolCallId: key, messages: [] });
+  // The toolkit reports PayPal errors as a JSON string instead of throwing; surface them.
+  const text = typeof out === "string" ? out : JSON.stringify(out);
+  if (/"error"\s*:/.test(text) || /"name"\s*:\s*"(UNPROCESSABLE_ENTITY|INVALID_REQUEST|VALIDATION_ERROR|AUTHENTICATION_FAILURE|NOT_AUTHORIZED|RESOURCE_NOT_FOUND)"/.test(text))
+    throw new Error(`PayPal Agent Toolkit ${name}: ${text.slice(0, 600)}`);
+  return out;
 }
 
 const findInvoiceId = (x: unknown) => JSON.stringify(x).match(/INV2-[A-Z0-9-]{10,}/)?.[0] ?? null;
