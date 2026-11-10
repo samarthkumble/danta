@@ -45,7 +45,9 @@ export const PlanSchema = z.object({
       }),
     )
     .describe("Things a patient should ask the clinic about before paying"),
-  summary: z.string().describe("Two or three plain sentences: what will be done, over how many trips, total cost"),
+  summary: z
+    .string()
+    .describe("Two or three plain sentences: what will be done and over how many trips. Do not state any price or total; code adds those up from the lines."),
 });
 
 export type Plan = z.infer<typeof PlanSchema>;

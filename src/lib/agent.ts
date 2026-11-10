@@ -79,7 +79,7 @@ async function propose(caseId: string, p: Proposal) {
     "propose",
   ) as { id: string; status: string };
   await logEvent(caseId, "agent", lc.ok ? "action.proposed" : "action.blocked", { tool: p.tool, args: p.args, failed: lc.rules.filter((r) => !r.pass).map((r) => r.rule) });
-  return { id: row.id, status: row.status, failed: lc.rules.filter((r) => !r.pass).map((r) => r.rule) };
+  return { id: row.id, status: row.status, tool: p.tool, failed: lc.rules.filter((r) => !r.pass).map((r) => r.rule) };
 }
 
 function snapshot(b: CaseBundle) {
@@ -127,10 +127,12 @@ export async function runAgent(caseId: string, instruction: string) {
       },
     }),
   };
+  // One model step only: the model picks tool calls, and code writes the reply from what the rules decided.
+  // (A second step would send tool results back to the model, which Gemini 3 rejects without thought signatures.)
   const { text } = await generateText({
     model: model(),
     temperature: 0,
-    maxSteps: 4,
+    maxSteps: 1,
     tools,
     system:
       "You are Danta's clinic assistant. You manage the schedule and payments of one international dental patient. " +
@@ -138,7 +140,26 @@ export async function runAgent(caseId: string, instruction: string) {
       "If a proposal comes back blocked, explain which rule failed. Reply in two or three short sentences. Never give medical advice.",
     prompt: `Case:\n${JSON.stringify(snapshot(b))}\n\nInstruction from the clinic coordinator: ${instruction}`,
   });
-  return { text, proposals };
+  return { text: reply(text, proposals), proposals };
+}
+
+const TOOL_NAMES: Record<string, string> = {
+  issue_stage_invoice: "send the PayPal invoice",
+  reschedule_stage: "move the stage",
+  refund_warranty_claim: "refund the claim",
+};
+
+/** Plain reply built from the rule results, so the explanation of a block always matches the check that made it. */
+function reply(modelText: string, proposals: { status: string; failed: string[]; tool?: string }[]) {
+  if (!proposals.length) return modelText.trim() || "I could not turn that into an action. Try naming the stage and the date or amount.";
+  return proposals
+    .map((p) => {
+      const what = TOOL_NAMES[p.tool ?? ""] ?? "do that";
+      return p.status === "blocked"
+        ? `I can't ${what}: a rule blocked it (${p.failed.join("; ").toLowerCase()}).`
+        : `I've proposed to ${what}. Every rule passed; approve it below to send it to PayPal.`;
+    })
+    .join(" ");
 }
 
 // ------------------------------------------------------------------ execution after approval
