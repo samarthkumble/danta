@@ -143,18 +143,18 @@ function ItineraryPreview() {
           <p className="small muted" style={{ marginBottom: 8 }}>5 days, implant placed</p>
           <div className="pass-stage">
             <span>Booking deposit</span>
-            <span className="num">$290.00</span>
+            <span className="num">$278.00</span>
             <span className="pill paid">Paid</span>
           </div>
           <div className="pass-stage">
             <span>Scan, graft and implant</span>
-            <span className="num">$660.00</span>
+            <span className="num">$672.00</span>
             <span className="pill due">Due on arrival</span>
           </div>
         </div>
         <div className="pass-stub">
           <span className="small muted">Paid so far</span>
-          <span className="amount num">$290</span>
+          <span className="amount num">$278</span>
           <span className="stamp">Paid PayPal</span>
         </div>
       </div>

@@ -1,5 +1,5 @@
 "use client";
-import { useMemo, useRef } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import { BryntumSchedulerPro } from "@bryntum/schedulerpro-react";
 import "@bryntum/schedulerpro/schedulerpro.css";
 import "@bryntum/schedulerpro/svalbard-light.css";
@@ -54,6 +54,7 @@ export default function Schedule({ b, onMove }: { b: Bundle; onMove: (stageIdx: 
         stageIdx: s.idx,
         amount: s.amount_cents,
         status: s.status,
+        label: `${s.title}, ${fmt(s.amount_cents, s.currency)}`,
       });
     }
     for (let i = 1; i < treat.length; i++) {
@@ -91,7 +92,15 @@ export default function Schedule({ b, onMove }: { b: Bundle; onMove: (stageIdx: 
     };
   }, [b]);
 
+  // Loaded only in the browser (no server rendering), so window is available here.
+  const narrow = window.innerWidth < 640;
   const version = b.stages.map((s) => `${s.id}:${s.starts_on}:${s.status}`).join("|");
+
+  // Fit both trips and the healing months into view once the engine has placed the events.
+  useEffect(() => {
+    const t = setTimeout(() => void ref.current?.instance?.zoomToFit({ leftMargin: 30, rightMargin: narrow ? 90 : 190 }), 400);
+    return () => clearTimeout(t);
+  }, [version, narrow]);
 
   return (
     <div className="sched-host">
@@ -100,11 +109,11 @@ export default function Schedule({ b, onMove }: { b: Bundle; onMove: (stageIdx: 
         ref={ref}
         startDate={data.start}
         endDate={data.end}
-        viewPreset="weekAndMonth"
+        viewPreset="monthAndYear"
         rowHeight={52}
         barMargin={8}
         eventStyle="rounded"
-        columns={[{ type: "resourceInfo", text: "Who", width: 220, showEventCount: false, showImage: false }]}
+        columns={[{ type: "resourceInfo", text: "Who", width: narrow ? 120 : 220, showEventCount: false, showImage: false }]}
         resources={data.resources}
         events={data.events}
         dependencies={data.dependencies}
@@ -124,13 +133,11 @@ export default function Schedule({ b, onMove }: { b: Bundle; onMove: (stageIdx: 
             return `<b>${esc(eventRecord.name)}</b><br>${eventRecord.startDate.toDateString()}${amount !== undefined ? `<br>${esc(fmt(amount, cur))}` : ""}`;
           },
         }}
-        eventRenderer={({ eventRecord }: { eventRecord: { name: string; getData: (k: string) => unknown } }) => {
-          const amount = eventRecord.getData("amount") as number | undefined;
-          return `${esc(eventRecord.name)}${amount && eventRecord.getData("stageIdx") ? ` <span style="opacity:.75">${esc(fmt(amount, cur))}</span>` : ""}`;
-        }}
-        onPaint={({ firstPaint }: { firstPaint: boolean }) => {
-          if (firstPaint) void ref.current?.instance?.zoomToFit({ leftMargin: 40, rightMargin: 40 });
-        }}
+        labelsFeature={{ after: { field: "label" } }}
+        eventRenderer={({ eventRecord }: { eventRecord: { name: string; getData: (k: string) => unknown } }) =>
+          // Treatment stages are only a few days wide, so their name sits beside the bar instead of inside it.
+          eventRecord.getData("label") ? "" : esc(eventRecord.name)
+        }
         onAfterEventDrop={({ eventRecords, valid }) => {
           const r = eventRecords[0];
           const idx = r?.getData("stageIdx") as number | undefined;
