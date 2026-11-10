@@ -1,0 +1,243 @@
+{
+ "promptVersion": "49f7d9949e",
+ "model": "gemini-3.5-flash-lite",
+ "results": [
+  {
+   "name": "Regex baseline",
+   "n": 20,
+   "total": 17,
+   "trips": 19,
+   "items": 17,
+   "currency": 20,
+   "exact": 10,
+   "precision": 0.5555555555555556,
+   "recall": 0.8823529411764706,
+   "per": {
+    "line_math": {
+     "tp": 1,
+     "fp": 0,
+     "fn": 1
+    },
+    "total_mismatch": {
+     "tp": 2,
+     "fp": 3,
+     "fn": 0
+    },
+    "implant_no_crown": {
+     "tp": 0,
+     "fp": 0,
+     "fn": 1
+    },
+    "no_abutment": {
+     "tp": 2,
+     "fp": 4,
+     "fn": 0
+    },
+    "no_lab_fee": {
+     "tp": 5,
+     "fp": 2,
+     "fn": 0
+    },
+    "no_warranty": {
+     "tp": 3,
+     "fp": 2,
+     "fn": 0
+    },
+    "short_gap": {
+     "tp": 2,
+     "fp": 1,
+     "fn": 0
+    }
+   }
+  }
+ ],
+ "runs": {
+  "baseline": [
+   {
+    "totalCents": 102000,
+    "trips": 2,
+    "items": 5,
+    "currency": "USD",
+    "issues": [
+     "short_gap"
+    ]
+   },
+   {
+    "totalCents": 36000,
+    "trips": 1,
+    "items": 2,
+    "currency": "USD",
+    "issues": [
+     "no_abutment",
+     "no_lab_fee"
+    ]
+   },
+   {
+    "totalCents": 177500,
+    "trips": 2,
+    "items": 5,
+    "currency": "GBP",
+    "issues": []
+   },
+   {
+    "totalCents": 92000,
+    "trips": 3,
+    "items": 5,
+    "currency": "GBP",
+    "issues": [
+     "short_gap"
+    ]
+   },
+   {
+    "totalCents": 174000,
+    "trips": 1,
+    "items": 2,
+    "currency": "CAD",
+    "issues": [
+     "no_abutment",
+     "no_lab_fee"
+    ]
+   },
+   {
+    "totalCents": 108000,
+    "trips": 2,
+    "items": 5,
+    "currency": "CAD",
+    "issues": [
+     "no_warranty"
+    ]
+   },
+   {
+    "totalCents": 112000,
+    "trips": 2,
+    "items": 5,
+    "currency": "USD",
+    "issues": [
+     "total_mismatch"
+    ]
+   },
+   {
+    "totalCents": 22500,
+    "trips": 1,
+    "items": 2,
+    "currency": "USD",
+    "issues": [
+     "line_math",
+     "no_abutment",
+     "no_lab_fee"
+    ]
+   },
+   {
+    "totalCents": null,
+    "trips": 2,
+    "items": 0,
+    "currency": "AUD",
+    "issues": [
+     "total_mismatch"
+    ]
+   },
+   {
+    "totalCents": null,
+    "trips": 1,
+    "items": 0,
+    "currency": "AUD",
+    "issues": [
+     "no_abutment",
+     "no_lab_fee",
+     "total_mismatch"
+    ]
+   },
+   {
+    "totalCents": 2050000,
+    "trips": 2,
+    "items": 3,
+    "currency": "INR",
+    "issues": [
+     "no_abutment"
+    ]
+   },
+   {
+    "totalCents": 9600000,
+    "trips": 2,
+    "items": 4,
+    "currency": "INR",
+    "issues": [
+     "no_lab_fee",
+     "no_warranty",
+     "short_gap"
+    ]
+   },
+   {
+    "totalCents": 93000,
+    "trips": 1,
+    "items": 3,
+    "currency": "AED",
+    "issues": []
+   },
+   {
+    "totalCents": 438000,
+    "trips": 2,
+    "items": 4,
+    "currency": "USD",
+    "issues": []
+   },
+   {
+    "totalCents": 91000,
+    "trips": 2,
+    "items": 3,
+    "currency": "USD",
+    "issues": [
+     "no_abutment"
+    ]
+   },
+   {
+    "totalCents": 75000,
+    "trips": 1,
+    "items": 2,
+    "currency": "GBP",
+    "issues": [
+     "no_lab_fee",
+     "no_warranty"
+    ]
+   },
+   {
+    "totalCents": 240000,
+    "trips": 1,
+    "items": 2,
+    "currency": "CAD",
+    "issues": [
+     "no_warranty"
+    ]
+   },
+   {
+    "totalCents": null,
+    "trips": 2,
+    "items": 0,
+    "currency": "USD",
+    "issues": [
+     "total_mismatch"
+    ]
+   },
+   {
+    "totalCents": 73000,
+    "trips": 1,
+    "items": 2,
+    "currency": "USD",
+    "issues": [
+     "no_warranty",
+     "total_mismatch"
+    ]
+   },
+   {
+    "totalCents": 4500000,
+    "trips": 1,
+    "items": 3,
+    "currency": "INR",
+    "issues": [
+     "no_lab_fee"
+    ]
+   }
+  ],
+  "danta": null
+ }
+}

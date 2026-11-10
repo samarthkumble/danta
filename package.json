@@ -8,7 +8,8 @@
     "typecheck": "next typegen && tsc --noEmit",
     "start": "next start",
     "lint": "eslint",
-    "test": "vitest run"
+    "test": "vitest run",
+    "eval": "NODE_OPTIONS=--conditions=react-server tsx scripts/eval.ts"
   },
   "dependencies": {
     "@ai-sdk/google": "^1.2.22",
@@ -32,6 +33,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.4.6",
+    "tsx": "^4.20.6",
     "typescript": "^5",
     "vitest": "^3.2.4"
   }

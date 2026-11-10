@@ -1,0 +1,292 @@
+[
+ {
+  "id": "q01",
+  "note": "clean",
+  "quote": "Sea Breeze Dental, Udupi. Estimate for an NRI patient (Texas). Prices in USD.\n\nTRIP 1 (6 days)\n1. Consultation and OPG X-ray .............. 1 x 40.00 = 40.00\n2. Implant fixture, tooth 46 ............... 1 x 480.00 = 480.00\n3. Implant surgery ......................... 1 x 160.00 = 160.00\nHealing: 4 months before the crown.\n\nTRIP 2 (3 days)\n1. Abutment ................................ 1 x 130.00 = 130.00\n2. PFM crown incl. lab ..................... 1 x 210.00 = 210.00\n\nTOTAL: $1,020.00\n25% deposit to book.\nWarranty: crowns 1 year against fracture; implants 5 years (manufacturer).",
+  "key": {
+   "totalCents": 102000,
+   "statedTotalCents": 102000,
+   "trips": 2,
+   "items": 5,
+   "currency": "USD",
+   "issues": []
+  }
+ },
+ {
+  "id": "q02",
+  "note": "crown without lab fee",
+  "quote": "Pearl Smiles, Kochi. Estimate in USD.\n\nVISIT 1\n1. Root canal treatment, tooth 16 .......... 1 x 120.00 = 120.00\n2. Zirconia crown, tooth 16 ................ 1 x 240.00 = 240.00\n\nTOTAL: $360.00\nFull payment on day 1.\nWarranty: crowns 1 year against fracture; implants 5 years (manufacturer).",
+  "key": {
+   "totalCents": 36000,
+   "statedTotalCents": 36000,
+   "trips": 1,
+   "items": 2,
+   "currency": "USD",
+   "issues": [
+    "no_lab_fee"
+   ]
+  }
+ },
+ {
+  "id": "q03",
+  "note": "clean, quantities",
+  "quote": "Malabar Dental Care, Kozhikode. Quote for UK patient, in GBP.\n\nTrip 1:\n- CBCT scan: £45.00\n- Implants, upper front (x2): £840.00\n- Bone graft: £150.00\nReturn after 3 months.\n\nTrip 2:\n- Abutments (x2): £220.00\n- Implant crowns, lab work included (x2): £520.00\n\nTOTAL: £1,775.00\n20% deposit.\nWarranty: crowns 1 year against fracture; implants 5 years (manufacturer).",
+  "key": {
+   "totalCents": 177500,
+   "statedTotalCents": 177500,
+   "trips": 2,
+   "items": 5,
+   "currency": "GBP",
+   "issues": []
+  }
+ },
+ {
+  "id": "q04",
+  "note": "short healing gap",
+  "quote": "Coastal Implant Centre, Mangaluru. GBP quote.\n\nFirst visit:\n- Consultation: £30.00\n- Implant, lower left: £450.00\n- Surgical fee: £120.00\nSecond visit in 3 weeks.\n\nSecond visit:\n- Abutment: £100.00\n- Crown with lab charges: £220.00\n\nTOTAL: £920.00\nDeposit 30%.\nWarranty: crowns 1 year against fracture; implants 5 years (manufacturer).",
+  "key": {
+   "totalCents": 92000,
+   "statedTotalCents": 92000,
+   "trips": 2,
+   "items": 5,
+   "currency": "GBP",
+   "issues": [
+    "short_gap"
+   ]
+  }
+ },
+ {
+  "id": "q05",
+  "note": "veneers without lab fee",
+  "quote": "Konkan Dental Studio, Goa. Estimate for Canadian patient (CAD).\n\nStage 1\n| Treatment | Qty | Rate | Amount |\n| Scaling and polishing | 1 | 60.00 | 60.00 |\n| Porcelain veneers, upper 6 | 6 | 280.00 | 1,680.00 |\n\nTOTAL: CAD 1,740.00\n50% advance.\nWarranty: crowns 1 year against fracture; implants 5 years (manufacturer).",
+  "key": {
+   "totalCents": 174000,
+   "statedTotalCents": 174000,
+   "trips": 1,
+   "items": 2,
+   "currency": "CAD",
+   "issues": [
+    "no_lab_fee"
+   ]
+  }
+ },
+ {
+  "id": "q06",
+  "note": "no warranty",
+  "quote": "Nethravathi Dental Clinic, Puttur. CAD.\n\nTrip 1\n| Treatment | Qty | Rate | Amount |\n| Implant fixture | 1 | 500.00 | 500.00 |\n| Placement | 1 | 150.00 | 150.00 |\nHealing 4 months.\n\nTrip 2\n| Treatment | Qty | Rate | Amount |\n| Abutment | 1 | 120.00 | 120.00 |\n| Lab fee | 1 | 60.00 | 60.00 |\n| Zirconia crown | 1 | 250.00 | 250.00 |\n\nTOTAL: CAD 1,080.00\n20% deposit.",
+  "key": {
+   "totalCents": 108000,
+   "statedTotalCents": 108000,
+   "trips": 2,
+   "items": 5,
+   "currency": "CAD",
+   "issues": [
+    "no_warranty"
+   ]
+  }
+ },
+ {
+  "id": "q07",
+  "note": "stated total wrong by 60",
+  "quote": "Smile Arc Dental, Bengaluru. USD quote.\n\nTRIP 1\n1. Extraction, tooth 36 .................... 1 x 50.00 = 50.00\n2. Implant fixture ......................... 1 x 520.00 = 520.00\n3. Surgical placement ...................... 1 x 150.00 = 150.00\nHeal 4 months.\n\nTRIP 2\n1. Abutment ................................ 1 x 140.00 = 140.00\n2. Zirconia crown + lab .................... 1 x 260.00 = 260.00\n\nTOTAL: $1,180.00\n20% deposit.\nWarranty: crowns 1 year against fracture; implants 5 years (manufacturer).",
+  "key": {
+   "totalCents": 112000,
+   "statedTotalCents": 118000,
+   "trips": 2,
+   "items": 5,
+   "currency": "USD",
+   "issues": [
+    "total_mismatch"
+   ]
+  }
+ },
+ {
+  "id": "q08",
+  "note": "line math wrong (3x35=105)",
+  "quote": "Royal Dental, Mysuru. USD.\n\nVISIT 1\n1. Composite fillings ...................... 3 x 35.00 = 115.00\n2. Root canal, tooth 26 .................... 1 x 110.00 = 110.00\n\nTOTAL: $225.00\nWarranty: crowns 1 year against fracture; implants 5 years (manufacturer).",
+  "key": {
+   "totalCents": 22500,
+   "statedTotalCents": 22500,
+   "trips": 1,
+   "items": 2,
+   "currency": "USD",
+   "issues": [
+    "line_math"
+   ]
+  }
+ },
+ {
+  "id": "q09",
+  "note": "clean, prose",
+  "quote": "Dear Mr. Varghese, thank you for visiting Kerala Smile Centre, Thrissur. Prices in AUD.\n\nOn your first trip:\nWe will do two implants in the lower jaw at AUD 1,200.00 (2 units).\nThen cbct scan at AUD 50.00.\nAfter four months of healing you will return.\n\nOn your second trip:\nWe will do abutments at AUD 240.00 (2 units).\nThen implant crowns, lab work included at AUD 600.00 (2 units).\n\nAltogether this comes to AUD 2,090.00.\nWe ask for a 20% deposit.\nWarranty: crowns 1 year against fracture; implants 5 years (manufacturer).",
+  "key": {
+   "totalCents": 209000,
+   "statedTotalCents": 209000,
+   "trips": 2,
+   "items": 4,
+   "currency": "AUD",
+   "issues": []
+  }
+ },
+ {
+  "id": "q10",
+  "note": "implant with no crown or abutment, single trip",
+  "quote": "Hello Ms. Iyer, here is your plan from Blue Lotus Dental, Chennai (AUD).\n\nVisit one:\nWe will do implant for the missing molar at AUD 650.00.\nThen surgery and medicines at AUD 120.00.\nYou can come back for the rest later.\n\nAltogether this comes to AUD 770.00.\nPay in full at the visit.\nWarranty: crowns 1 year against fracture; implants 5 years (manufacturer).",
+  "key": {
+   "totalCents": 77000,
+   "statedTotalCents": 77000,
+   "trips": 1,
+   "items": 2,
+   "currency": "AUD",
+   "issues": [
+    "implant_no_crown",
+    "no_abutment"
+   ]
+  }
+ },
+ {
+  "id": "q11",
+  "note": "clean, rupees, no implant",
+  "quote": "SRI DURGA DENTAL HOSPITAL, Mangaluru. Estimate (INR).\n\nSitting 1\nRCT tooth 37 - 1 no. @ Rs. 6,000/- = Rs. 6,000/-\nPost and core - 1 no. @ Rs. 2,500/- = Rs. 2,500/-\n\nSitting 2\nZirconia crown incl. lab - 1 no. @ Rs. 12,000/- = Rs. 12,000/-\n\nTOTAL: Rs. 20,500/-\nAdvance Rs. 5,000/-\nWarranty: crowns 1 year against fracture; implants 5 years (manufacturer).",
+  "key": {
+   "totalCents": 2050000,
+   "statedTotalCents": 2050000,
+   "trips": 2,
+   "items": 3,
+   "currency": "INR",
+   "issues": []
+  }
+ },
+ {
+  "id": "q12",
+  "note": "short gap, no lab fee, no warranty",
+  "quote": "Shree Dental Care, Bengaluru. Quotation (INR).\n\nPhase 1\nImplant (Osstem) - 2 no. @ Rs. 28,000/- = Rs. 56,000/-\nBone graft - 1 no. @ Rs. 9,000/- = Rs. 9,000/-\nGap of 1 month.\n\nPhase 2\nAbutment - 2 no. @ Rs. 6,000/- = Rs. 12,000/-\nCeramic crown - 2 no. @ Rs. 9,500/- = Rs. 19,000/-\n\nTOTAL: Rs. 96,000/-\nAdvance 25%.",
+  "key": {
+   "totalCents": 9600000,
+   "statedTotalCents": 9600000,
+   "trips": 2,
+   "items": 4,
+   "currency": "INR",
+   "issues": [
+    "no_lab_fee",
+    "no_warranty",
+    "short_gap"
+   ]
+  }
+ },
+ {
+  "id": "q13",
+  "note": "clean, simple",
+  "quote": "Udupi Smile Studio. Quote for patient living in Dubai, in AED.\n\nTrip 1:\n- Full mouth X-ray: AED 80.00\n- Deep cleaning: AED 250.00\n- Composite fillings (x4): AED 600.00\n\nTOTAL: AED 930.00\nFillings guaranteed 1 year.",
+  "key": {
+   "totalCents": 93000,
+   "statedTotalCents": 93000,
+   "trips": 1,
+   "items": 3,
+   "currency": "AED",
+   "issues": []
+  }
+ },
+ {
+  "id": "q14",
+  "note": "clean, large",
+  "quote": "Arabian Sea Dental, Karwar. USD.\n\nTrip 1\n| Treatment | Qty | Rate | Amount |\n| All-on-4 implants, lower arch | 4 | 450.00 | 1,800.00 |\n| Temporary denture | 1 | 300.00 | 300.00 |\nHealing 5 months.\n\nTrip 2\n| Treatment | Qty | Rate | Amount |\n| Multi-unit abutments | 4 | 120.00 | 480.00 |\n| Final fixed prosthesis (lab included) | 1 | 1,800.00 | 1,800.00 |\n\nTOTAL: $4,380.00\n15% deposit.\nWarranty: crowns 1 year against fracture; implants 5 years (manufacturer).",
+  "key": {
+   "totalCents": 438000,
+   "statedTotalCents": 438000,
+   "trips": 2,
+   "items": 4,
+   "currency": "USD",
+   "issues": []
+  }
+ },
+ {
+  "id": "q15",
+  "note": "implant without abutment",
+  "quote": "Green Valley Dental, Shivamogga. USD.\n\nTRIP 1\n1. Implant fixture ......................... 1 x 500.00 = 500.00\n2. Placement ............................... 1 x 150.00 = 150.00\nHeal 4 months.\n\nTRIP 2\n1. Zirconia crown with lab fee ............. 1 x 260.00 = 260.00\n\nTOTAL: $910.00\n20% deposit.\nWarranty: crowns 1 year against fracture; implants 5 years (manufacturer).",
+  "key": {
+   "totalCents": 91000,
+   "statedTotalCents": 91000,
+   "trips": 2,
+   "items": 3,
+   "currency": "USD",
+   "issues": [
+    "no_abutment"
+   ]
+  }
+ },
+ {
+  "id": "q16",
+  "note": "bridge without lab, no warranty",
+  "quote": "Tulu Nadu Dental Arts, Mangaluru. GBP.\n\nVisit 1:\n- Teeth whitening: £180.00\n- Bridge, 3 units (x3): £570.00\n\nTOTAL: £750.00",
+  "key": {
+   "totalCents": 75000,
+   "statedTotalCents": 75000,
+   "trips": 1,
+   "items": 2,
+   "currency": "GBP",
+   "issues": [
+    "no_lab_fee",
+    "no_warranty"
+   ]
+  }
+ },
+ {
+  "id": "q17",
+  "note": "line math wrong (2x90=180)",
+  "quote": "Western Ghats Dental, Hassan. CAD.\n\nTrip 1\n| Treatment | Qty | Rate | Amount |\n| Clear aligners, full course | 1 | 2,200.00 | 2,200.00 |\n| Retainers | 2 | 90.00 | 200.00 |\n\nTOTAL: CAD 2,400.00\n40% advance.\nAligner refinements free for 12 months.",
+  "key": {
+   "totalCents": 240000,
+   "statedTotalCents": 240000,
+   "trips": 1,
+   "items": 2,
+   "currency": "CAD",
+   "issues": [
+    "line_math"
+   ]
+  }
+ },
+ {
+  "id": "q18",
+  "note": "clean prose",
+  "quote": "Dear Dr. Rao's patient, Moodbidri Family Dentistry estimate (USD).\n\nFirst trip:\nWe will do extraction of two wisdom teeth at $140.00 (2 units).\nThen implant on the lower right at $480.00.\nAfter three months come back.\n\nSecond trip:\nWe will do abutment at $110.00.\nThen crown, lab charges included at $230.00.\n\nAltogether this comes to $960.00.\nA deposit of 20%.\nWarranty: crowns 1 year against fracture; implants 5 years (manufacturer).",
+  "key": {
+   "totalCents": 96000,
+   "statedTotalCents": 96000,
+   "trips": 2,
+   "items": 4,
+   "currency": "USD",
+   "issues": []
+  }
+ },
+ {
+  "id": "q19",
+  "note": "total off by 50",
+  "quote": "Karavali Dental Hub, Kundapura. USD.\n\nTRIP 1\n1. Complete dentures, upper and lower ...... 1 x 650.00 = 650.00\n2. Relining ................................ 1 x 80.00 = 80.00\n\nTOTAL: $780.00\nFull payment.\nDentures adjusted free for 6 months.",
+  "key": {
+   "totalCents": 73000,
+   "statedTotalCents": 78000,
+   "trips": 1,
+   "items": 2,
+   "currency": "USD",
+   "issues": [
+    "total_mismatch"
+   ]
+  }
+ },
+ {
+  "id": "q20",
+  "note": "implant, abutment and crown in one sitting, no lab",
+  "quote": "Mahalasa Dental Clinic, Udupi. Estimate (INR).\n\nSitting 1\nImplant - 1 no. @ Rs. 30,000/- = Rs. 30,000/-\nAbutment - 1 no. @ Rs. 7,000/- = Rs. 7,000/-\nPFM crown - 1 no. @ Rs. 8,000/- = Rs. 8,000/-\n\nTOTAL: Rs. 45,000/-\nAdvance Rs. 10,000/-\nWarranty: crowns 1 year against fracture; implants 5 years (manufacturer).",
+  "key": {
+   "totalCents": 4500000,
+   "statedTotalCents": 4500000,
+   "trips": 1,
+   "items": 3,
+   "currency": "INR",
+   "issues": [
+    "no_lab_fee"
+   ]
+  }
+ }
+]
