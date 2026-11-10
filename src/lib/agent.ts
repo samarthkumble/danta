@@ -252,7 +252,13 @@ export async function decide(actionId: string, approve: boolean, by: string) {
       result = await shiftFrom(b, b.stages.find((s) => s.idx === Number(a.args.stageIdx))!, String(a.args.newStart));
     } else if (a.tool === "refund_warranty_claim") {
       const claim = b.claims.find((c: { id: string }) => c.id === a.args.claimId) as { id: string; stage_id: string; refund_cents: number };
-      result = await refundStage(claim.stage_id, claim.refund_cents, "Aftercare guarantee refund from your clinic, via Danta.", claim.id);
+      // The refund itself goes through the Agent Toolkit's create_refund, with the same idempotency key as before.
+      result = await refundStage(claim.stage_id, claim.refund_cents, "Aftercare guarantee refund from your clinic, via Danta.", claim.id, async (captureId, cents, currency, key, note) => {
+        const out = await runTool(key, "create_refund", { capture_id: captureId, amount: { value: (cents / 100).toFixed(2), currency_code: currency }, note_to_payer: note });
+        const r = (typeof out === "string" ? JSON.parse(out) : out) as { id?: string; status?: string };
+        if (!r.id) throw new Error(`PayPal Agent Toolkit create_refund returned no refund id: ${JSON.stringify(out).slice(0, 300)}`);
+        return { id: r.id, status: r.status ?? "COMPLETED" };
+      });
       await db().from("claims").update({ status: "refunded" }).eq("id", claim.id);
     }
     await db().from("agent_actions").update({ status: "executed", result }).eq("id", a.id);

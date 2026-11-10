@@ -92,7 +92,9 @@ export function ClaimPanel({ b, onDone }: { b: Bundle; onDone: () => void }) {
                   <div>
                     {s?.title}: {c.verdict?.covered ? `covered, ${fmt(c.refund_cents, cur)} refund` : c.verdict?.needsHuman ? "sent to the clinic to decide" : "not covered"}
                   </div>
-                  <div className="who">{c.status === "refunded" ? "Refunded to your PayPal account" : c.status === "open" ? "Waiting for the clinic to approve" : c.status}</div>
+                  <div className="who">
+                    {{ refunded: "Refunded to your PayPal account", open: "Waiting for the clinic to approve the refund", review: "A person at the clinic will look at this", declined: "Outside the written warranty" }[c.status] ?? c.status}
+                  </div>
                 </div>
               </div>
             );

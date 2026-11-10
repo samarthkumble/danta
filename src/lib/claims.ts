@@ -33,7 +33,7 @@ export async function submitClaim(token: string, stageIdx: number, note: string)
   const claim = must(
     await db()
       .from("claims")
-      .insert({ case_id: b.case.id, stage_id: s.id, note, verdict: { ...verdict, daysSincePayment: days }, refund_cents: refund, status: "open" })
+      .insert({ case_id: b.case.id, stage_id: s.id, note, verdict: { ...verdict, daysSincePayment: days }, refund_cents: refund, status: refund > 0 ? "open" : verdict.needsHuman ? "review" : "declined" })
       .select()
       .single(),
     "claim",

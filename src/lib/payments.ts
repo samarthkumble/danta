@@ -77,13 +77,15 @@ export async function markPaid(s: Stage, captureId: string, via: "order" | "invo
 }
 
 /** Refund part of a paid stage, never more than what is left, only within PayPal's 180-day window. */
-export async function refundStage(stageId: string, cents: number, note: string, key: string) {
+type RefundExec = (captureId: string, cents: number, currency: string, requestId: string, note: string) => Promise<{ id: string; status: string }>;
+
+export async function refundStage(stageId: string, cents: number, note: string, key: string, exec: RefundExec = refundCapture) {
   const { s, c } = await stageWithCase(stageId);
   if (!s.paypal_capture_id || !["paid", "partially_refunded"].includes(s.status)) throw new Error("Only a paid stage can be refunded.");
   const left = s.amount_cents - s.refunded_cents;
   if (cents <= 0 || cents > left) throw new Error(`Refund must be between 0.01 and ${(left / 100).toFixed(2)}.`);
   if (s.paid_at && Date.now() - new Date(s.paid_at).getTime() > 180 * 86_400_000) throw new Error("PayPal refunds are only possible within 180 days of payment.");
-  const r = await refundCapture(s.paypal_capture_id, cents, s.currency, requestId("refund", s.id, key), note);
+  const r = await exec(s.paypal_capture_id, cents, s.currency, requestId("refund", s.id, key), note);
   const refunded = s.refunded_cents + cents;
   await db()
     .from("stages")
