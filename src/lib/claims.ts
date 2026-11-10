@@ -15,9 +15,21 @@ export async function submitClaim(token: string, stageIdx: number, note: string)
   const s = b.stages.find((x) => x.idx === stageIdx);
   if (!s || !s.paid_at) throw new Error("Choose a stage you have paid for.");
   const days = Math.floor((Date.now() - new Date(s.paid_at).getTime()) / 86_400_000);
-  const verdict = await reviewClaim({ terms: b.clinic.warranty_terms, stageTitle: s.title, daysSincePayment: days, note: note.slice(0, 4000) });
+  // The plan stage behind this payment stage, and its priced lines, so a refund on "the crown fee" uses the crown's price.
+  const planStage = [...(b.case.plan?.stages ?? [])].sort((x, y) => x.number - y.number)[s.idx - 1];
+  const items = (b.case.plan?.items ?? []).filter((it) => planStage && it.stage === planStage.number);
+  const verdict = await reviewClaim({
+    clinic: `${b.clinic.name}, ${b.clinic.city}`,
+    terms: b.clinic.warranty_terms,
+    stageTitle: s.title,
+    items: items.map((it) => it.description),
+    daysSincePayment: days,
+    note: note.slice(0, 4000),
+  });
+  const item = verdict.appliesToItem ? items.find((it) => it.description === verdict.appliesToItem) : undefined;
+  const base = item ? Math.round(item.lineTotal * 100) : s.amount_cents;
   const left = s.amount_cents - s.refunded_cents;
-  const refund = verdict.covered && !verdict.needsHuman ? Math.min(left, Math.round((s.amount_cents * verdict.refundPercent) / 100)) : 0;
+  const refund = verdict.covered && !verdict.needsHuman ? Math.min(left, Math.round((base * verdict.refundPercent) / 100)) : 0;
   const claim = must(
     await db()
       .from("claims")

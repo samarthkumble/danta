@@ -52,18 +52,34 @@ export async function translatePlan(plan: Plan, issues: string[], language: stri
 export const ClaimVerdictSchema = z.object({
   covered: z.boolean().describe("Whether the reported problem falls under the clinic's written warranty terms"),
   matchedTerm: z.string().nullable().describe("The exact warranty sentence that applies"),
-  refundPercent: z.number().min(0).max(100).describe("Percent of the affected stage's price the terms allow back"),
+  appliesToItem: z
+    .string()
+    .nullable()
+    .describe("If the terms refund part of one item's fee (e.g. 'the crown fee'), copy that item's description exactly from the list given; otherwise null"),
+  refundPercent: z
+    .number()
+    .min(0)
+    .max(100)
+    .describe("Percent the terms allow back: of that item's fee if appliesToItem is set, otherwise of the whole stage. 0 if the remedy is a replacement only"),
   reasoning: z.string().describe("Two plain sentences the clinic and patient can both read"),
   needsHuman: z.boolean().describe("True if the note is ambiguous or outside what the terms cover"),
 });
 
-export async function reviewClaim(p: { terms: string; stageTitle: string; daysSincePayment: number; note: string }) {
+export async function reviewClaim(p: {
+  clinic: string;
+  terms: string;
+  stageTitle: string;
+  items: string[];
+  daysSincePayment: number;
+  note: string;
+}) {
   const { object } = await generateObject({
     model: model(),
     schema: ClaimVerdictSchema,
     temperature: 0,
     system:
-      "You check an aftercare claim against a dental clinic's written warranty terms. Apply only the written terms; " +
+      "You check an aftercare claim against a dental clinic's written warranty terms. The clinic named in the input did the treatment " +
+      "in India; the note comes from the patient's own dentist at home describing a problem with that treatment. Apply only the written terms; " +
       "never invent coverage. If unsure, set needsHuman true. " +
       SAFETY,
     prompt: JSON.stringify(p),
