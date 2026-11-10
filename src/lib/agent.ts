@@ -31,6 +31,7 @@ export function checkProposal(b: CaseBundle, p: Proposal): Check {
       return check([
         ["Stage exists and is not the booking deposit", !!s && s.idx > 0],
         ["Previous stage is paid", !!prev && ["paid", "partially_refunded", "refunded"].includes(prev.status)],
+        ["Stage is not paid yet", !!s && !["paid", "partially_refunded", "refunded"].includes(s.status)],
         ["Stage has no open invoice", !!s && !s.paypal_invoice_id],
         ["Amount is the agreed stage amount (agent cannot change prices)", !!s && s.amount_cents > 0],
       ]);
