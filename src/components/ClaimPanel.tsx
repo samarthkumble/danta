@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { Bundle } from "./client";
 import { api, fmt } from "./client";
 
@@ -12,7 +12,10 @@ type Verdict = { covered: boolean; matchedTerm: string | null; refundPercent: nu
 /** A dentist back home describes the problem; the AI checks it against the clinic's written warranty. */
 export function ClaimPanel({ b, onDone }: { b: Bundle; onDone: () => void }) {
   const paid = b.stages.filter((s) => s.idx > 0 && s.paid_at);
-  const [stageIdx, setStageIdx] = useState<number>(paid[paid.length - 1]?.idx ?? 0);
+  const latest = paid[paid.length - 1]?.idx ?? 0;
+  const [stageIdx, setStageIdx] = useState<number>(latest);
+  // When another stage gets paid while the page is open, point the form at the newest treatment.
+  useEffect(() => setStageIdx(latest), [latest]);
   const [note, setNote] = useState("");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -65,7 +68,12 @@ export function ClaimPanel({ b, onDone }: { b: Bundle; onDone: () => void }) {
           </label>
           <div className="row">
             {b.case.demo && (
-              <button type="button" className="btn btn-ghost btn-sm" onClick={() => setNote(SAMPLE_NOTE)}>
+              <button type="button" className="btn btn-ghost btn-sm" onClick={() => {
+                  setNote(SAMPLE_NOTE);
+                  // The sample note is about the crown, so pick the paid stage that includes it.
+                  const crown = [...paid].reverse().find((s) => /crown/i.test(s.title));
+                  if (crown) setStageIdx(crown.idx);
+                }}>
                 Use a sample note
               </button>
             )}
